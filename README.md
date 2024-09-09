@@ -1,6 +1,8 @@
 # nzshm_rupture_widget
 
-A [Jupyter Notebook](https://jupyter.org/) widget for displaying 3D rupture data on a map.
+A [Jupyter Notebook](https://jupyter.org/) widget for displaying 3D data on a map. 
+
+Developed for displaying faults and ruptures for [Te Tauira Matapae Pūmate Rū i Aotearoa • New Zealand National Seismic Hazard Model](https://nshm.gns.cri.nz/)
 
 ## Installation
 
