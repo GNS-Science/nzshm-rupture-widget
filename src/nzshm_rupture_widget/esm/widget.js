@@ -1,0 +1,175 @@
+import PickController from "./PickController";
+import CameraController from "./CameraController";
+import SliderWidget from "./SliderWidget";
+import loadGeoJSON from "./GeoJSON";
+
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        let script = Object.assign(document.createElement("script"), {
+            type: "text/javascript",
+            async: true,
+            src: src,
+        });
+        script.addEventListener("load", resolve);
+        script.addEventListener("error", reject);
+        document.body.appendChild(script);
+    });
+}
+
+await loadScript("https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js");
+
+function render({ model, el }) {
+
+    const div = document.createElement("div");
+    div.id = "cesiumContainer";
+    div.style.width = model.get("width");
+    div.style.height = model.get("height");
+
+
+    const viewer = new Cesium.Viewer(div, {
+        animation: false,
+        baseLayerPicker: false,
+        navigationHelpButton: false,
+        navigationInstructionsInitiallyVisible: false,
+        sceneModePicker: false,
+        homeButton: true,
+        geocoder: false,
+        fullscreenButton: true,
+        fullscreenElement: div,
+        timeline: false,
+        baseLayer: new Cesium.ImageryLayer(new Cesium.OpenStreetMapImageryProvider({
+            url: "https://tile.openstreetmap.org/",
+            credit: new Cesium.Credit("Cesium: OpenStreetMap", true)
+        })),
+        // large negative value to render large underground structures
+        depthPlaneEllipsoidOffset: -100000.0,
+    });
+
+    const oldCamera = model.get("_camera");
+    if (oldCamera && Object.keys(oldCamera).length > 0) {
+        viewer.camera.setView({
+            destination: oldCamera.position,
+            orientation: {
+                direction: oldCamera.direction,
+                up: oldCamera.up
+            }
+        })
+    } else {
+        viewer.camera.setView({
+            destination: Cesium.Cartesian3.fromDegrees(175.57716369628906, -41.35120773, 95000),
+        });
+    }
+
+    viewer.homeButton.viewModel.command.beforeExecute.addEventListener(
+        function (e) {
+            e.cancel = true;
+            viewer.zoomTo(dataSources[selected]);
+        }
+    )
+    viewer.scene.mode = Cesium.SceneMode.SCENE3D;
+    viewer.scene.globe.translucency.enabled = true;
+    viewer.scene.globe.translucency.frontFaceAlpha = 0.5;
+    viewer.scene.globe.undergroundColor = Cesium.Color.WHITE;
+
+    const cameraCallback = function (position, direction, up) {
+        model.set("_camera", {
+            "position": position,
+            "direction": direction,
+            "up": up
+        });
+        model.save_changes();
+    }
+
+    new CameraController(Cesium, viewer, cameraCallback);
+    new PickController(
+        Cesium,
+        viewer,
+        function ({ picked, position }) {
+            console.log(picked);
+            const canvas = document.createElement("canvas");
+            canvas.classList.add("sampleCanvas");
+            canvas.width = 200;
+            canvas.height = 200;
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+            el.appendChild(canvas);
+        });
+
+    const data = model.get("data");
+
+    // console.log(JSON.stringify(data));
+
+    var selected = model.get("selection") || 0;
+  //  var extrusionScale = model.get("extrusion");
+
+  //  console.log(extrusionScale);
+    const dataSources = [];
+
+    for (const geojson of data) {
+
+        const dataSource = loadGeoJSON(geojson);
+
+        const show = selected === -1 || dataSources.length == selected;
+        dataSource.then(function (ds) {
+            ds.show = show;
+        })
+
+        dataSources.push(dataSource);
+        viewer.dataSources.add(dataSource);
+    }
+
+    //  console.log(JSON.stringify(data));
+
+    viewer.zoomTo(dataSources[selected]);
+
+    if (dataSources.length > 1 && selected > -1) {
+        const updateFunction = new SliderWidget(div, 0, dataSources.length - 1, selected, function (event) {
+            if (event.value !== selected) {
+                dataSources[selected].then(function (source) {
+                    source.show = false;
+                });
+                selected = event.value;
+                dataSources[selected].then(function (source) {
+                    source.show = true;
+                });
+                viewer.zoomTo(dataSources[selected]
+                    // ,
+                    // new Cesium.HeadingPitchRange(
+                    //     viewer.scene.camera.heading,
+                    //     viewer.scene.camera.pitch,
+                    //     500000
+                    // )
+                );
+            }
+            if (model.get("selection") !== selected) {
+                //                console.log("save selection changes to: " + selected);
+                model.set("selection", selected);
+                model.save_changes();
+                //                console.log(model);
+            }
+        });
+        model.on("change:selection", function () {
+            //            console.log("selection updated: " + model.get("selection"));
+            updateFunction(model.get("selection"));
+        });
+    }
+
+    div.addEventListener("contextmenu", function (ev) {
+        ev.stopPropagation();
+    })
+
+    el.appendChild(div);
+
+    return function () {
+        console.log("destroy map_3d_widget");
+        while (dataSources.length) {
+            dataSources.pop();
+        }
+        viewer.entities.removeAll();
+        viewer.destroy();
+    }
+}
+
+export default { render };
