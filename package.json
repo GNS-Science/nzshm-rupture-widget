@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "dev": "esbuild --bundle --format=esm --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/widget.js --watch",
+        "test": "vitest",
+        "build": "esbuild --bundle --format=esm --minify --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/widget.js "
+    },
+    "devDependencies": {
+        "vitest": "^2.0.5"
+    }
+}

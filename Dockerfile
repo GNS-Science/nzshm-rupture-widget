@@ -1,6 +1,8 @@
 FROM quay.io/jupyter/base-notebook:latest
 
 RUN pip install "anywidget[dev]" geojson ipyleaflet jupyterlab-geojson pandas
+RUN npm install --save-exact --save-dev esbuild
+RUN npm install -D vitest
 
 USER root
 RUN apt-get update && apt-get install -y git
