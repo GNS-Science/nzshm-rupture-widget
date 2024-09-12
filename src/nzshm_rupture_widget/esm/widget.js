@@ -80,7 +80,7 @@ function render({ model, el }) {
         model.save_changes();
     }
 
-    new CameraController(Cesium, viewer, cameraCallback);
+    new CameraController(viewer, cameraCallback);
     new PickController(
         Cesium,
         viewer,
@@ -162,6 +162,7 @@ function render({ model, el }) {
 
     el.appendChild(div);
 
+    // clean-up function
     return function () {
         console.log("destroy map_3d_widget");
         while (dataSources.length) {

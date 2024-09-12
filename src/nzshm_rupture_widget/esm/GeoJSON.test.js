@@ -156,7 +156,7 @@ test('elevation: can handle explicit elevationCorrection', () => {
 
 })
 
-test('styles: preserves Leaflet styling', () => {
+test('styles: emulates Leaflet styling', () => {
     const gj = featureCollection(pointFeature);
     const style = {
         color: "the-color",
@@ -175,7 +175,7 @@ test('styles: preserves Leaflet styling', () => {
             "stroke": "the-color",
             "stroke-opacity": "the-opacity",
             "stroke-width": "the-weight",
-           style
-          });
+            style
+        });
 
 })

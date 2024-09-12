@@ -1,18 +1,19 @@
-function CameraController(Cesium, viewer, callback) {
+function CameraController(viewer, callback) {
     const NONE = 0;
     const LEFT = 1;
     const MIDDLE = 2;
     const RIGHT = 3;
 
-    var mouseMode = NONE;
-    var pickedPosition;
-    var pickedCartographic;
-    var startPosition;
-    var startDirection;
-    var startUp;
-    var startRight;
-    var startMousePosition;
-    var startCamera;
+    let mouseMode = NONE;
+    let mouseMovePosition;
+    let pickedPosition;
+    let pickedCartographic;
+    let startPosition;
+    let startDirection;
+    let startUp;
+    let startRight;
+    let startMousePosition;
+    let startCamera;
 
     viewer.scene.screenSpaceCameraController.enableCollisionDetection = false;
     viewer.scene.screenSpaceCameraController.enableTranslate = false;
@@ -23,20 +24,28 @@ function CameraController(Cesium, viewer, callback) {
 
     viewer.scene.pickTranslucentDepth = true;
 
+    /**
+     * Based on a windowPosition, tries to pick an entity or the ellipsoid as fallback.
+     * Returns a world coordinate.
+     * @param {*} windowPosition 
+     * @returns 
+     */
+    const pick = function (windowPosition) {
+        const ray = viewer.camera.getPickRay(windowPosition);
+        const picked = viewer.scene.pickFromRay(ray);
+        if (picked?.object) {
+            return picked.position;
+        }
+
+        return viewer.camera.pickEllipsoid(
+            windowPosition,
+            viewer.scene.globe.ellipsoid
+        );
+    }
+
     const leftDown = function (event) {
 
-        const ray = viewer.camera.getPickRay(event.position);
-        const picked = viewer.scene.pickFromRay(ray);
-
-        if (picked && picked.object) {
-            pickedPosition = picked.position;
-        } else {
-            const cartesian = viewer.camera.pickEllipsoid(
-                event.position,
-                viewer.scene.globe.ellipsoid
-            );
-            pickedPosition = cartesian;
-        }
+        pickedPosition = pick(event.position);
 
         if (pickedPosition) {
 
@@ -59,18 +68,7 @@ function CameraController(Cesium, viewer, callback) {
 
     const rightDown = function (event) {
 
-        const ray = viewer.camera.getPickRay(event.position);
-        const picked = viewer.scene.pickFromRay(ray);
-
-        if (picked && picked.object) {
-            pickedPosition = picked.position;
-        } else {
-            const cartesian = viewer.camera.pickEllipsoid(
-                event.position,
-                viewer.scene.globe.ellipsoid
-            );
-            pickedPosition = cartesian;
-        }
+        pickedPosition = pick(event.position);
 
         if (pickedPosition) {
             mouseMode = RIGHT;
@@ -173,16 +171,23 @@ function CameraController(Cesium, viewer, callback) {
     const wheel = function (event) {
         stopDrag();
 
-        const cartographic = Cesium.Cartographic.fromCartesian(
-            viewer.scene.camera.position
-        );
+        const target = pick(mouseMovePosition);
 
-        const zoom = Math.max(Math.min(cartographic.height / 4, 50000), 1000);
+        if (target) {
 
-        if (event > 0) {
-            viewer.scene.camera.zoomIn(zoom);
-        } else {
-            viewer.scene.camera.zoomOut(zoom);
+            const scratchDirection = new Cesium.Cartesian3();
+            const direction = new Cesium.Cartesian3();
+            Cesium.Cartesian3.subtract(target, viewer.scene.camera.position, scratchDirection);
+            Cesium.Cartesian3.normalize(scratchDirection, direction);
+            const magnitude = Cesium.Cartesian3.magnitude(scratchDirection);
+
+            const zoom = Math.max(magnitude / 4, 1000);
+
+            if (event > 0) {
+                viewer.scene.camera.move(direction, zoom);
+            } else {
+                viewer.scene.camera.move(direction, -zoom);
+            }
         }
     }
 
@@ -194,6 +199,9 @@ function CameraController(Cesium, viewer, callback) {
     handler.setInputAction(wheel, Cesium.ScreenSpaceEventType.WHEEL);
 
     handler.setInputAction(function (movement) {
+
+        mouseMovePosition = movement.endPosition;
+
         if (!pickedPosition || mouseMode < 0) {
             return;
         }
