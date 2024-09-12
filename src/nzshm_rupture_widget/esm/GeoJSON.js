@@ -75,6 +75,7 @@ function loadGeoJSON(geojson) {
             const extrusion = style?.extrusion;
             if (extrusion) {
                 entity.polygon.extrudedHeight = extrusion;
+                entity.polygon.extrudedHeightReference = Cesium.HeightReference.RELATIVE_TO_GROUND;
             }
 
             const stroke = style?.stroke;
@@ -87,7 +88,7 @@ function loadGeoJSON(geojson) {
                 }
             }
 
-            // this is ignored on all major windows browsers
+            // this is ignored in all major windows browsers
             // https://cesium.com/learn/ion-sdk/ref-doc/PolygonGraphics.html#outlineWidth
             const weight = style?.weight;
             if (weight && entity.polygon) {

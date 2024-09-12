@@ -293,6 +293,7 @@ function loadGeoJSON(geojson) {
       const extrusion = style?.extrusion;
       if (extrusion) {
         entity.polygon.extrudedHeight = extrusion;
+        entity.polygon.extrudedHeightReference = Cesium.HeightReference.RELATIVE_TO_GROUND;
       }
       const stroke = style?.stroke;
       if (typeof stroke !== "undefined") {
