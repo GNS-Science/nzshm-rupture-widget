@@ -29,8 +29,8 @@ function removeElevation(coords) {
  * Feature properties can use [simplestyle](https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0) styling.
  * Some [Leaflet styling](https://leafletjs.com/reference.html#path-option) is also supported: `color`, `weight`, `opacity`, `fillColor`, `fillOpacity`.
  * Polygon feature properties can also have a `style.extrusion` property which will remove elevation information from the polygon and extrude it from 0 to the specified extrusion height in meters.
- * @param {*} geojson 
- * @returns 
+ * @param {Object} geojson 
+ * @returns {Promise.<Cesium.GeoJsonDataSource>}
  */
 function loadGeoJSON(geojson) {
 

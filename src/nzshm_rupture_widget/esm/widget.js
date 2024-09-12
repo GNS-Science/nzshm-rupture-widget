@@ -80,7 +80,7 @@ function render({ model, el }) {
         model.save_changes();
     }
 
-    new CameraController(viewer, cameraCallback);
+    CameraController(viewer, cameraCallback);
     // new PickController(
     //     Cesium,
     //     viewer,
@@ -99,12 +99,7 @@ function render({ model, el }) {
 
     const data = model.get("data");
 
-    // console.log(JSON.stringify(data));
-
     var selected = model.get("selection") || 0;
-  //  var extrusionScale = model.get("extrusion");
-
-  //  console.log(extrusionScale);
     const dataSources = [];
 
     for (const geojson of data) {
@@ -120,8 +115,6 @@ function render({ model, el }) {
         viewer.dataSources.add(dataSource);
     }
 
-    //  console.log(JSON.stringify(data));
-
     viewer.zoomTo(dataSources[selected]);
 
     if (dataSources.length > 1 && selected > -1) {
@@ -134,24 +127,14 @@ function render({ model, el }) {
                 dataSources[selected].then(function (source) {
                     source.show = true;
                 });
-                viewer.zoomTo(dataSources[selected]
-                    // ,
-                    // new Cesium.HeadingPitchRange(
-                    //     viewer.scene.camera.heading,
-                    //     viewer.scene.camera.pitch,
-                    //     500000
-                    // )
-                );
+                viewer.zoomTo(dataSources[selected]);
             }
             if (model.get("selection") !== selected) {
-                //                console.log("save selection changes to: " + selected);
                 model.set("selection", selected);
                 model.save_changes();
-                //                console.log(model);
             }
         });
         model.on("change:selection", function () {
-            //            console.log("selection updated: " + model.get("selection"));
             updateFunction(model.get("selection"));
         });
     }

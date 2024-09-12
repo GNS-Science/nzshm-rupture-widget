@@ -1,3 +1,15 @@
+/**
+ * @callback CameraControllerCallback
+ * @param {Cesium.Cartesian3} position
+ * @param {Cesium.Cartesian3} direction
+ * @param {Cesium.Cartesian3} up
+ */
+
+/**
+ * Controls the Cesium camera with the mouse. Replaces [buggy Cesiumn controls](https://github.com/CesiumGS/cesium/issues/12137).
+ * @param {Cesium.Viewer} viewer 
+ * @param {CameraControllerCallback} callback is called when the camera position, direction, or up changes.
+ */
 function CameraController(viewer, callback) {
     const NONE = 0;
     const LEFT = 1;
@@ -27,7 +39,7 @@ function CameraController(viewer, callback) {
     /**
      * Based on a windowPosition, tries to pick an entity or the ellipsoid as fallback.
      * Returns a world coordinate. The result will have set `isEllipsoid:true` if it's a hit on the ellipsoid.
-     * @param {*} windowPosition 
+     * @param {Cesium.Cartesian3} windowPosition 
      * @returns 
      */
     const pick = function (windowPosition) {
@@ -45,6 +57,11 @@ function CameraController(viewer, callback) {
         return position;
     }
 
+    /**
+     * Returns true if the camera is underground.
+     * @param {Cesium.Camera} camera 
+     * @returns 
+     */
     const isUnderground = function (camera) {
         const cartographic = Cesium.Cartographic.fromCartesian(camera.position);
         return cartographic.height < 0;
