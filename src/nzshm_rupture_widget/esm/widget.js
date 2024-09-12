@@ -81,21 +81,21 @@ function render({ model, el }) {
     }
 
     new CameraController(viewer, cameraCallback);
-    new PickController(
-        Cesium,
-        viewer,
-        function ({ picked, position }) {
-            console.log(picked);
-            const canvas = document.createElement("canvas");
-            canvas.classList.add("sampleCanvas");
-            canvas.width = 200;
-            canvas.height = 200;
-            var ctx = canvas.getContext("2d");
-            ctx.beginPath();
-            ctx.arc(100, 100, 40, 0, 2 * Math.PI);
-            ctx.stroke();
-            el.appendChild(canvas);
-        });
+    // new PickController(
+    //     Cesium,
+    //     viewer,
+    //     function ({ picked, position }) {
+    //         console.log(picked);
+    //         const canvas = document.createElement("canvas");
+    //         canvas.classList.add("sampleCanvas");
+    //         canvas.width = 200;
+    //         canvas.height = 200;
+    //         var ctx = canvas.getContext("2d");
+    //         ctx.beginPath();
+    //         ctx.arc(100, 100, 40, 0, 2 * Math.PI);
+    //         ctx.stroke();
+    //         el.appendChild(canvas);
+    //     });
 
     const data = model.get("data");
 

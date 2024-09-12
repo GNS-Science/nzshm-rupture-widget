@@ -183,6 +183,7 @@ function CameraController(viewer, callback) {
 
             const zoom = Math.max(magnitude / 4, 1000);
 
+            // we're moving the camera along the direction of the mouse pointer so that we're zooming in on that location
             if (event > 0) {
                 viewer.scene.camera.move(direction, zoom);
             } else {
@@ -200,6 +201,7 @@ function CameraController(viewer, callback) {
 
     handler.setInputAction(function (movement) {
 
+        // keeping track of this for zooming to the correct location
         mouseMovePosition = movement.endPosition;
 
         if (!pickedPosition || mouseMode < 0) {
