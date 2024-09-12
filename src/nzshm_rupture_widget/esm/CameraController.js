@@ -26,7 +26,7 @@ function CameraController(viewer, callback) {
 
     /**
      * Based on a windowPosition, tries to pick an entity or the ellipsoid as fallback.
-     * Returns a world coordinate.
+     * Returns a world coordinate. The result will have set `isEllipsoid:true` if it's a hit on the ellipsoid.
      * @param {*} windowPosition 
      * @returns 
      */
@@ -37,10 +37,17 @@ function CameraController(viewer, callback) {
             return picked.position;
         }
 
-        return viewer.camera.pickEllipsoid(
+        const position = viewer.camera.pickEllipsoid(
             windowPosition,
             viewer.scene.globe.ellipsoid
         );
+        position.isEllipsoid = true;
+        return position;
+    }
+
+    const isUnderground = function (camera) {
+        const cartographic = Cesium.Cartographic.fromCartesian(camera.position);
+        return cartographic.height < 0;
     }
 
     const leftDown = function (event) {
@@ -181,7 +188,8 @@ function CameraController(viewer, callback) {
             Cesium.Cartesian3.normalize(scratchDirection, direction);
             const magnitude = Cesium.Cartesian3.magnitude(scratchDirection);
 
-            const zoom = Math.max(magnitude / 4, 1000);
+            const useDefaultZoom = target.isEllipsoid && isUnderground(viewer.scene.camera);
+            let zoom = useDefaultZoom ? 1000 : Math.max(magnitude / 4, 1000);
 
             // we're moving the camera along the direction of the mouse pointer so that we're zooming in on that location
             if (event > 0) {
