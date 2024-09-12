@@ -58,7 +58,7 @@ function loadGeoJSON(geojson) {
                 ["fillColor", "fill"],
                 ["fillOpacity", "fill-opacity"]
             ];
-            for (var [from, to] of mappings) {
+            for (const [from, to] of mappings) {
                 if (style[from]) {
                     feature.properties[to] = style[from];
                 }
