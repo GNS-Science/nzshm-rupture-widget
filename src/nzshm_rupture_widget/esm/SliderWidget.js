@@ -1,7 +1,7 @@
 function SliderWidget(parent, min, max, selected, callback) {
 
     const div = document.createElement("div");
-    div.classList.add("rangeWidget");
+    div.classList.add("sliderWidget");
 
     const slider = document.createElement("input");
     slider.type = "range";
@@ -54,9 +54,9 @@ function SliderWidget(parent, min, max, selected, callback) {
         });
     }
 
-    div.appendChild(slider);
     div.appendChild(sliderBack);
     div.appendChild(sliderForward);
+    div.appendChild(slider);
     parent.appendChild(div);
 
     return function (value) {

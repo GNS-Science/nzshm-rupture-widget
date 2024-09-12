@@ -26,6 +26,7 @@ function CameraController(viewer, callback) {
     let startRight;
     let startMousePosition;
     let startCamera;
+    let canZoom = false;
 
     viewer.scene.screenSpaceCameraController.enableCollisionDetection = false;
     viewer.scene.screenSpaceCameraController.enableTranslate = false;
@@ -68,6 +69,7 @@ function CameraController(viewer, callback) {
     }
 
     const leftDown = function (event) {
+        canZoom = true;
 
         pickedPosition = pick(event.position);
 
@@ -91,6 +93,7 @@ function CameraController(viewer, callback) {
     }
 
     const rightDown = function (event) {
+        canZoom = true;
 
         pickedPosition = pick(event.position);
 
@@ -193,6 +196,11 @@ function CameraController(viewer, callback) {
     }
 
     const wheel = function (event) {
+        // if (!canZoom) {
+        //    // viewer.container.dispatchEvent();
+        //     return;
+        // }
+
         stopDrag();
 
         const target = pick(mouseMovePosition);
@@ -241,6 +249,8 @@ function CameraController(viewer, callback) {
             left_move(movement);
         }
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+    viewer.scene.canvas.addEventListener("pointerleave", (event) => canZoom = false);
 };
 
 export default CameraController;
