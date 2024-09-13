@@ -1,4 +1,5 @@
 @import url("https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 /* We don't want to display the Cesium Ion logo as we're not using Ion.*/
 .cesium-credit-logoContainer {
