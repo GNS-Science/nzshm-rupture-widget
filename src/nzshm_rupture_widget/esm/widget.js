@@ -25,7 +25,6 @@ function render({ model, el }) {
     div.style.width = model.get("width");
     div.style.height = model.get("height");
 
-
     const viewer = new Cesium.Viewer(div, {
         animation: false,
         baseLayerPicker: false,

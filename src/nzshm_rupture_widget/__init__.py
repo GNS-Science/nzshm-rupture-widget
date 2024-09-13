@@ -18,10 +18,9 @@ class Widget(anywidget.AnyWidget):
     width = traitlets.Unicode('100%').tag(sync=True, o=True)
     height = traitlets.Unicode('400px').tag(sync=True, o=True)
     selection = traitlets.Int(0).tag(sync=True)
-    extrusion = traitlets.Float(0).tag(sync=True)
 
-def rupture_map(data, selection=0, extrusion=0):
+def rupture_map(data, selection=0):
     if isinstance(data, list):
-        return Widget(data=data, selection=selection, extrusion=extrusion)
+        return Widget(data=data, selection=selection)
     else:
-        return Widget(data=[data], selection=0, extrusion=extrusion)
+        return Widget(data=[data], selection=0)

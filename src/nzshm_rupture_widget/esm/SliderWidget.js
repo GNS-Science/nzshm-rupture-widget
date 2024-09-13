@@ -1,3 +1,10 @@
+function asInt(value) {
+    if (typeof value === "string") {
+        return parseInt(value);
+    }
+    return value;
+}
+
 function SliderWidget(parent, min, max, selected, callback) {
 
     const div = document.createElement("div");
@@ -24,22 +31,21 @@ function SliderWidget(parent, min, max, selected, callback) {
         slider.addEventListener("change", function (event) {
             callback({
                 type: "change",
-                value: event.target.value
+                value: asInt(event.target.value)
             });
         });
         slider.addEventListener("input", function (event) {
             callback({
                 type: "input",
-                value: event.target.value
+                value: asInt(event.target.value)
             });
         });
         sliderForward.addEventListener("click", function (event) {
-            console.log("max " + max + " slider " + slider.value);
             if (max > slider.value) {
                 slider.value++;
                 callback({
                     type: "forward",
-                    value: slider.value
+                    value: asInt(slider.value)
                 });
             }
         });
@@ -48,7 +54,7 @@ function SliderWidget(parent, min, max, selected, callback) {
                 slider.value--;
                 callback({
                     type: "back",
-                    value: slider.value
+                    value: asInt(slider.value)
                 });
             }
         });
@@ -60,11 +66,11 @@ function SliderWidget(parent, min, max, selected, callback) {
     parent.appendChild(div);
 
     return function (value) {
-        if (value >= min && value <= max) {
+        if (value >= min && value <= max && slider.value !== value) {
             slider.value = value;
             callback({
                 type: "setValue",
-                value: slider.value
+                value: asInt(slider.value)
             });
         }
     }
