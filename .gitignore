@@ -10,3 +10,5 @@ __pycache__
 
 src/nzshm_rupture_widget/static/widget.js
 src/nzshm_rupture_widget/static/SliderWidget.js
+src/nzshm_rupture_widget/static/FullScreenWidget.js
+src/nzshm_rupture_widget/static/HomeWidget.js

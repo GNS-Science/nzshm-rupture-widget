@@ -26,6 +26,21 @@ class SliderWidget(anywidget.AnyWidget):
     max = traitlets.Int(10).tag(sync=True)
     value = traitlets.Int(0).tag(sync=True)
 
+class FullScreenWidget(anywidget.AnyWidget):
+    _esm = pathlib.Path(__file__).parent / "static" / "FullScreenWidget.js"
+    _css = pathlib.Path(__file__).parent / "static" / "widget.css"
+
+
+class HomeWidget(anywidget.AnyWidget):
+    _esm = pathlib.Path(__file__).parent / "static" / "HomeWidget.js"
+    _css = pathlib.Path(__file__).parent / "static" / "widget.css"
+
+    # see https://github.com/manzt/anywidget/issues/650#issuecomment-2286472536
+    def __init__(self, map):
+        super().__init__()
+        self.on_msg(lambda widget, msg, buffer: map.send({"action" : "home"}))
+    
+
 def rupture_map(data, selection=0):
     if isinstance(data, list):
         return MapWidget(data=data, selection=selection)

@@ -1,5 +1,6 @@
 @import url("https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/* see https://fontawesome.com/v4/icons/ */
 
 /* We don't want to display the Cesium Ion logo as we're not using Ion.*/
 .cesium-credit-logoContainer {
@@ -19,6 +20,25 @@
   pointer-events: all;
 }
 
+.controlButton3DMap {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 4px 4px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  height: 15px;
+  width: 15px;
+margin: 6px;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+}
+
+.controlButton3DMap:hover {
+  background-color: #e4e4e4;
+}
+
 .sampleCanvas {
   position: absolute;
   top: 20px;
@@ -30,7 +50,7 @@
 
 .sliderWidget {
   display: inline-flex;
-  width: 100% - 4px;
+  width: calc(100% - 12px);
   height: 29px;
   background: white;
   border: 2px solid rgba(0, 0, 0, .2);

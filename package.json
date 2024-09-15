@@ -2,6 +2,8 @@
     "scripts": {
         "dev": "esbuild --bundle --format=esm --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/widget.js --watch",
         "devSlider": "esbuild --bundle --format=esm --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/SliderWidget.js --watch",
+        "devFullscreen": "esbuild --bundle --format=esm --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/FullScreenWidget.js --watch",
+        "devHome": "esbuild --bundle --format=esm --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/HomeWidget.js --watch",
         "test": "vitest",
         "build": "esbuild --bundle --format=esm --minify --outdir=./src/nzshm_rupture_widget/static/ ./src/nzshm_rupture_widget/esm/widget.js "
     },
