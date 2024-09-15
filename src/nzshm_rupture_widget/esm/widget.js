@@ -1,6 +1,5 @@
 import PickController from "./PickController";
 import CameraController from "./CameraController";
-import SliderWidget from "./SliderWidget";
 import loadGeoJSON from "./GeoJSON";
 
 function loadScript(src) {
@@ -117,12 +116,12 @@ function render({ model, el }) {
     viewer.zoomTo(dataSources[selected]);
 
     if (dataSources.length > 1 && selected > -1) {
-        const updateFunction = new SliderWidget(div, 0, dataSources.length - 1, selected, function (event) {
-            if (event.value !== selected) {
+        const updateFunction = function (value) {
+            if (value !== selected) {
                 dataSources[selected].then(function (source) {
                     source.show = false;
                 });
-                selected = event.value;
+                selected = value;
                 dataSources[selected].then(function (source) {
                     source.show = true;
                 });
@@ -132,7 +131,7 @@ function render({ model, el }) {
                 model.set("selection", selected);
                 model.save_changes();
             }
-        });
+        };
         model.on("change:selection", function () {
             updateFunction(model.get("selection"));
         });
@@ -143,6 +142,13 @@ function render({ model, el }) {
     })
 
     el.appendChild(div);
+
+    var fullscreenButton = div.querySelector('.cesium-viewer-fullscreenContainer');
+    console.log(fullscreenButton);
+    if (fullscreenButton) {
+        fullscreenButton.style.left = '10px'; // Adjust the position
+        fullscreenButton.style.right = 'auto';
+    }
 
     // clean-up function
     return function () {

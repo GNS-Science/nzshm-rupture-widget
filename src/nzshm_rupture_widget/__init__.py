@@ -10,7 +10,7 @@ except importlib.metadata.PackageNotFoundError:
     __version__ = "unknown"
 
 
-class Widget(anywidget.AnyWidget):
+class MapWidget(anywidget.AnyWidget):
     _esm = pathlib.Path(__file__).parent / "static" / "widget.js"
     _css = pathlib.Path(__file__).parent / "static" / "widget.css"
     _camera = traitlets.Dict().tag(sync=True)
@@ -19,8 +19,15 @@ class Widget(anywidget.AnyWidget):
     height = traitlets.Unicode('400px').tag(sync=True, o=True)
     selection = traitlets.Int(0).tag(sync=True)
 
+class SliderWidget(anywidget.AnyWidget):
+    _esm = pathlib.Path(__file__).parent / "static" / "SliderWidget.js"
+    _css = pathlib.Path(__file__).parent / "static" / "widget.css"
+    min = traitlets.Int(0).tag(sync=True)
+    max = traitlets.Int(10).tag(sync=True)
+    value = traitlets.Int(0).tag(sync=True)
+
 def rupture_map(data, selection=0):
     if isinstance(data, list):
-        return Widget(data=data, selection=selection)
+        return MapWidget(data=data, selection=selection)
     else:
-        return Widget(data=[data], selection=0)
+        return MapWidget(data=[data], selection=0)

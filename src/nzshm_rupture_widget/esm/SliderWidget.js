@@ -5,7 +5,7 @@ function asInt(value) {
     return value;
 }
 
-function SliderWidget(parent, min, max, selected, callback) {
+function Slider(parent, min, max, selected, callback) {
 
     const div = document.createElement("div");
     div.classList.add("sliderWidget");
@@ -76,4 +76,22 @@ function SliderWidget(parent, min, max, selected, callback) {
     }
 }
 
-export default SliderWidget;
+function render({ model, el }) {
+
+    const startMin = model.get("min");
+    const startMax = model.get("max");
+    const startValue = model.get("value");
+
+    const update = Slider(el, startMin, startMax, startValue, ({type, value}) => {
+        console.log(value)
+        console.log("sliderWiget: set " + value)
+        model.set("value", value);
+        model.save_changes();
+    });
+    model.on("change:value", function () {
+        console.log("sliderWiget: received " + model.get("value"))
+        update(model.get("value"));
+    });
+}
+
+export default { render };
