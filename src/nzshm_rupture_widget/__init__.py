@@ -16,10 +16,9 @@ class MapWidget(anywidget.AnyWidget):
     _css = pathlib.Path(__file__).parent / "static" / "widget.css"
     _camera = traitlets.Dict().tag(sync=True)
     data = traitlets.List().tag(sync=True)
-    width = traitlets.Unicode('100%').tag(sync=True, o=True)
-    height = traitlets.Unicode('400px').tag(sync=True, o=True)
     selection = traitlets.Int(0).tag(sync=True)
     hover_style = traitlets.Dict().tag(sync=True)
+    globe_translucency = traitlets.Float(0.5).tag(sync=True)
     _hover_callback = None
     _on_msg_set = False
 
@@ -34,6 +33,9 @@ class MapWidget(anywidget.AnyWidget):
         if not self._on_msg_set :
             self.on_msg(self._on_msg_handler)
             self._on_msg_set = True
+
+    def go_home(self):
+        self.send({"action" : "home"})
         
 
 class SliderWidget(anywidget.AnyWidget):
@@ -55,7 +57,7 @@ class HomeWidget(anywidget.AnyWidget):
     # see https://github.com/manzt/anywidget/issues/650#issuecomment-2286472536
     def __init__(self, map):
         super().__init__()
-        self.on_msg(lambda widget, msg, buffer: map.send({"action" : "home"}))
+        self.on_msg(lambda widget, msg, buffer: map.go_home())
     
 
 def rupture_map(data, selection=0):

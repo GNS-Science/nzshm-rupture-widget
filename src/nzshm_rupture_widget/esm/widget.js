@@ -63,7 +63,7 @@ function render({ model, el }) {
 
     viewer.scene.mode = Cesium.SceneMode.SCENE3D;
     viewer.scene.globe.translucency.enabled = true;
-    viewer.scene.globe.translucency.frontFaceAlpha = 0.5;
+    viewer.scene.globe.translucency.frontFaceAlpha = model.get("globe_translucency");
     viewer.scene.globe.undergroundColor = Cesium.Color.WHITE;
 
     // prevent default popups
@@ -136,6 +136,10 @@ function render({ model, el }) {
             updateFunction(model.get("selection"));
         });
     }
+
+    model.on("change:globe_translucency", function () {
+        viewer.scene.globe.translucency.frontFaceAlpha = model.get("globe_translucency");
+    });
 
     div.addEventListener("contextmenu", function (ev) {
         ev.stopPropagation();
