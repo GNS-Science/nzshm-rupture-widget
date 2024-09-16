@@ -70,7 +70,6 @@ function render({ model, el }) {
     viewer.selectedEntityChanged.addEventListener(function (selectedEntity) {
         if (selectedEntity) {
             viewer.selectedEntity = undefined;
-            console.log(selectedEntity);
         }
     });
 

@@ -68,7 +68,7 @@ def legend(title, values):
     html = HTML()
     value = f"<b>{title}</b><br/>"
     for key, val in values.items():
-        value += f"<i style=\"background-color: {val};\"></i> {key}<br/>" 
+        value += f"<div><i style=\"background-color: {val};\"></i> {key}</div>" 
     html.value = value
     html.add_class("mapLegend")
     return html
