@@ -15,7 +15,7 @@ function loadScript(src) {
     });
 }
 
-await loadScript("https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js");
+await loadScript("https://cesium.com/downloads/cesiumjs/releases/1.121/Build/Cesium/Cesium.js");
 
 function render({ model, el }) {
 
