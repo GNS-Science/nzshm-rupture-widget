@@ -3,7 +3,7 @@ import pathlib
 
 import anywidget
 import traitlets
-from ipywidgets import HTML, jslink, GridBox, Layout
+from ipywidgets import Box, HTML, jslink, GridBox, Layout
 
 try:
     __version__ = importlib.metadata.version("nzshm_rupture_widget")
@@ -78,15 +78,52 @@ def slider(map_widget):
     jslink((map_widget, "selection"), (slider_widget, "value"))
     return slider_widget
 
+class MapLayout():
+    map = None
+    grid_box = None
 
-def map_layout():
-    gridBox = GridBox(children=[map, right_bar, left_bar],
-        layout=Layout(
-            width='100%',
-            height='400px',
-            grid_template_rows='50px auto 50px',
-            grid_template_columns='100px auto 300px')
-       )
-    gridBox.add_class("fullScreenTarget")
-    return gridBox
+    def __init__(self, data):
+        self.map = MapWidget(data=data, layout=Layout(grid_area='1 / 1 / -1 / -1'))
+        self.widgets = {"top-left": [],
+               "bottom-left": [],
+               "top-right": [],
+               "bottom-right": []}
 
+    def add(self, widget, position="bottom-right"):
+        self.widgets[position].append(widget)
+
+    def render(self):
+        if self.grid_box:
+            return self.grid_box
+        
+        positions = [self.map]
+        if self.widgets["top-left"]:
+            bar = Box(self.widgets["top-left"])
+            bar.add_class('mapLeftBar')
+            bar.add_class('mapTopLeft')
+            positions.append(bar)
+        if self.widgets["bottom-left"]:
+            bar = Box(self.widgets["bottom-left"])
+            bar.add_class('mapLeftBar')
+            bar.add_class('mapBottomLeft')
+            positions.append(bar)
+        if self.widgets["top-right"]:
+            bar = Box(self.widgets["top-right"])
+            bar.add_class('mapRightBar')
+            bar.add_class('mapTopRight')
+            positions.append(bar)
+        if self.widgets["bottom-right"]:
+            bar = Box(self.widgets["bottom-right"])
+            bar.add_class('mapRightBar')
+            bar.add_class('mapBottomRight')
+            positions.append(bar)
+
+        self.grid_box = GridBox( 
+            children=positions,
+            layout=Layout(
+                width='100%',
+                height='400px',
+                grid_template_rows='50px auto 50px',
+                grid_template_columns='200px auto 300px'))
+        self.grid_box.add_class("fullScreenTarget")
+        return self.grid_box

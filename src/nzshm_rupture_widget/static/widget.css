@@ -39,11 +39,16 @@
   background-color: #e4e4e4;
 }
 
+.mapLegend {
+  pointer-events: none !important;
+}
+
 .mapLegend i {
   width: 18px;
   height: 18px;
   float: left;
   margin-right: 8px;
+  pointer-events: none;
 }
 
 .mapHtmlWidget {

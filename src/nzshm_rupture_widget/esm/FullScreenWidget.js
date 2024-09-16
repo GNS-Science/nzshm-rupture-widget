@@ -1,8 +1,8 @@
 function render({ model, el }) {
 
-    const button = document.createElement("div");
+    const button = document.createElement("i");
     button.classList.add("fa");
-    button.classList.add("fa-arrows-alt");
+    button.classList.add("fa-arrows");
     button.classList.add("controlButton3DMap");
 
     button.addEventListener("click", function (event) {
