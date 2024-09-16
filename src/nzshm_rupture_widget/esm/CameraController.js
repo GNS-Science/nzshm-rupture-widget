@@ -21,12 +21,25 @@ export const pick = function (viewer, windowPosition) {
     const position = viewer.camera.pickEllipsoid(
         windowPosition,
         viewer.scene.globe.ellipsoid
-    );
-    position.isEllipsoid = true;
-    return {
-        source: "ellipsoid",
-        position
+    )
+    if (position) {
+        position.isEllipsoid = true;
+        return {
+            source: "ellipsoid",
+            position
+        }
     }
+}
+
+/**
+ * For debugging
+ * @param {*} cartesian 
+ * @returns 
+ */
+const toDeg = function (cartesian) {
+    const latitude = cartesian.latitude * 180 / Math.PI;
+    const longitude = cartesian.longitude * 180 / Math.PI;
+    return [latitude, longitude, cartesian.height];
 }
 
 /**
@@ -160,37 +173,25 @@ function CameraController(viewer, callback) {
         // this rotates the camera around the globe's origin so that the pickedPosition from
         // the drag start is now at roughly the current mouse position when viewed through the camera.
 
-        const ray = startCamera.getPickRay(movement.endPosition);
-        // intersect with sphere
-        // const sphere = new Cesium.BoundingSphere(pickedPosition,  Cesium.Cartesian3.magnitude(pickedPosition));
-        // const interval = Cesium.IntersectionTests.raySphere(ray, sphere);
-        // const point = Cesium.Ray.getPoint(ray, interval.stop);
-
         // intersect with plane
+        const ray = startCamera.getPickRay(movement.endPosition);
         const plane = new Cesium.Plane(Cesium.Cartesian3.normalize(pickedPosition, new Cesium.Cartesian3()), -Cesium.Cartesian3.magnitude(pickedPosition));
         const point = Cesium.IntersectionTests.rayPlane(ray, plane);
-
         if (!point) {
             return;
         }
 
-        // lat/lon rotation
-        const cartographic = Cesium.Cartographic.fromCartesian(point);
-        const hpr = new Cesium.HeadingPitchRoll(cartographic.longitude - pickedCartographic.longitude, cartographic.latitude - pickedCartographic.latitude, 0);
-        const rotation = Cesium.Matrix3.fromHeadingPitchRoll(hpr);
+        const angle = Cesium.Cartesian3.angleBetween(point, pickedPosition)
+        const axis = Cesium.Cartesian3.cross(point, pickedPosition, new Cesium.Cartesian3())
+        const quat = Cesium.Quaternion.fromAxisAngle(axis, angle);
+        const rotM = Cesium.Matrix3.fromQuaternion(quat);
 
+        const position = mmul(startPosition, rotM);
+        const direction = mmul(startDirection, rotM);
+        const up = mmul(startUp, rotM);
+        const right = mmul(startRight, rotM);
 
-        // quaternion
-        // const rotAxis = Cesium.Cartesian3.cross(pickedPosition, point, new Cesium.Cartesian3());
-        // const angle = Cesium.Cartesian3.angleBetween(pickedPosition, point);
-        // const rotQuat = Cesium.Quaternion.fromAxisAngle(rotAxis, -angle);
-        // const rotation = Cesium.Matrix3.fromQuaternion(rotQuat);
-
-        setCamera(
-            mmul(startPosition, rotation),
-            mmul(startDirection, rotation),
-            mmul(startUp, rotation),
-            mmul(startRight, rotation));
+        setCamera(position, direction, up, right);
     }
 
     const stopDrag = function () {
