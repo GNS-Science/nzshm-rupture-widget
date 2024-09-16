@@ -18,7 +18,7 @@ class MapWidget(anywidget.AnyWidget):
     data = traitlets.List().tag(sync=True)
     selection = traitlets.Int(0).tag(sync=True)
     hover_style = traitlets.Dict().tag(sync=True)
-    globe_translucency = traitlets.Float(0.5).tag(sync=True)
+    globe_opacity = traitlets.Float(0.5).tag(sync=True)
     _hover_callback = None
     _on_msg_set = False
 
@@ -58,7 +58,20 @@ class HomeWidget(anywidget.AnyWidget):
     def __init__(self, map):
         super().__init__()
         self.on_msg(lambda widget, msg, buffer: map.go_home())
-    
+
+class FloatValueButtonWidget(anywidget.AnyWidget):
+    _esm = pathlib.Path(__file__).parent / "static" / "ValueButtonWidget.js"
+    _css = pathlib.Path(__file__).parent / "static" / "widget.css"
+    values = traitlets.List([0, 1]).tag(sync=True)
+    value = traitlets.Float(0).tag(sync=True)
+    icon = traitlets.Unicode("fa-exclamation").tag(sync=True)
+
+
+def transparency_button(map_widget, values):
+    widget = FloatValueButtonWidget(values=values, value=values[0], icon="fa-eye")
+    jslink((map_widget, "globe_opacity"), (widget, "value"))
+    return widget
+
 
 def rupture_map(data, selection=0):
     if isinstance(data, list):
