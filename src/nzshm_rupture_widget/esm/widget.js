@@ -66,6 +66,14 @@ function render({ model, el }) {
     viewer.scene.globe.translucency.frontFaceAlpha = 0.5;
     viewer.scene.globe.undergroundColor = Cesium.Color.WHITE;
 
+    // prevent default popups
+    viewer.selectedEntityChanged.addEventListener(function (selectedEntity) {
+        if (selectedEntity) {
+            viewer.selectedEntity = undefined;
+            console.log(selectedEntity);
+        }
+    });
+
     const cameraCallback = function (position, direction, up) {
         model.set("_camera", {
             "position": position,
@@ -76,21 +84,17 @@ function render({ model, el }) {
     }
 
     CameraController(viewer, cameraCallback);
-    // new PickController(
-    //     Cesium,
-    //     viewer,
-    //     function ({ picked, position }) {
-    //         console.log(picked);
-    //         const canvas = document.createElement("canvas");
-    //         canvas.classList.add("sampleCanvas");
-    //         canvas.width = 200;
-    //         canvas.height = 200;
-    //         var ctx = canvas.getContext("2d");
-    //         ctx.beginPath();
-    //         ctx.arc(100, 100, 40, 0, 2 * Math.PI);
-    //         ctx.stroke();
-    //         el.appendChild(canvas);
-    //     });
+
+    const hover_style = model.get("hover_style");
+
+    PickController(viewer, hover_style, (picked => {
+        const { source, properties } = picked;
+        if (source !== 'ellipsoid') {
+            console.log("send hover event")
+            model.send({ msg: "pick", source, properties });
+        }
+    }));
+
 
     const data = model.get("data");
 
@@ -139,7 +143,7 @@ function render({ model, el }) {
     })
 
     model.on("msg:custom", function (msg) {
-        if(msg?.action === 'home') {
+        if (msg?.action === 'home') {
             viewer.zoomTo(dataSources[selected]);
         }
     });

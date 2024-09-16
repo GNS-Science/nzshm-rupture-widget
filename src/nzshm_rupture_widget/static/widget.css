@@ -30,13 +30,70 @@
   text-align: center;
   height: 15px;
   width: 15px;
-margin: 6px;
+  margin: 6px;
   /* margin-top: auto;
   margin-bottom: auto; */
 }
 
 .controlButton3DMap:hover {
   background-color: #e4e4e4;
+}
+
+.mapLegend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+}
+
+.mapHtmlWidget {
+  background: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.mapRightBar {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  width: 100%;
+  grid-area: 2 / 3 / 4 / 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mapRightBar * {
+  pointer-events: all;
+}
+
+.mapTopRight {
+  justify-content: flex-start;
+}
+
+.mapBottomRight {
+  justify-content: flex-end;
+}
+
+.mapLeftBar {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  width: 100%;
+  grid-area: 1 / 1 / 4 / 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mapLeftBar * {
+  pointer-events: all;
+}
+
+.mapTopLeft {
+  justify-content: flex-start;
+}
+
+.mapBottomLeft {
+  justify-content: flex-end;
 }
 
 .sampleCanvas {

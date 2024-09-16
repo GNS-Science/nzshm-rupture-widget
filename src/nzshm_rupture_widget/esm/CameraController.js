@@ -6,6 +6,30 @@
  */
 
 /**
+ * Based on a windowPosition, tries to pick an entity or the ellipsoid as fallback.
+ * Returns a world coordinate. The result will have set `isEllipsoid:true` if it's a hit on the ellipsoid.
+ * @param {Cesium.Cartesian3} windowPosition 
+ * @returns 
+ */
+export const pick = function (viewer, windowPosition) {
+    const ray = viewer.camera.getPickRay(windowPosition);
+    const picked = viewer.scene.pickFromRay(ray);
+    if (picked?.object) {
+        return picked;
+    }
+
+    const position = viewer.camera.pickEllipsoid(
+        windowPosition,
+        viewer.scene.globe.ellipsoid
+    );
+    position.isEllipsoid = true;
+    return {
+        source: "ellipsoid",
+        position
+    }
+}
+
+/**
  * Controls the Cesium camera with the mouse. Replaces [buggy Cesiumn controls](https://github.com/CesiumGS/cesium/issues/12137).
  * @param {Cesium.Viewer} viewer 
  * @param {CameraControllerCallback} callback is called when the camera position, direction, or up changes.
@@ -38,27 +62,6 @@ function CameraController(viewer, callback) {
     viewer.scene.pickTranslucentDepth = true;
 
     /**
-     * Based on a windowPosition, tries to pick an entity or the ellipsoid as fallback.
-     * Returns a world coordinate. The result will have set `isEllipsoid:true` if it's a hit on the ellipsoid.
-     * @param {Cesium.Cartesian3} windowPosition 
-     * @returns 
-     */
-    const pick = function (windowPosition) {
-        const ray = viewer.camera.getPickRay(windowPosition);
-        const picked = viewer.scene.pickFromRay(ray);
-        if (picked?.object) {
-            return picked.position;
-        }
-
-        const position = viewer.camera.pickEllipsoid(
-            windowPosition,
-            viewer.scene.globe.ellipsoid
-        );
-        position.isEllipsoid = true;
-        return position;
-    }
-
-    /**
      * Returns true if the camera is underground.
      * @param {Cesium.Camera} camera 
      * @returns 
@@ -71,7 +74,7 @@ function CameraController(viewer, callback) {
     const leftDown = function (event) {
         canZoom = true;
 
-        pickedPosition = pick(event.position);
+        pickedPosition = pick(viewer, event.position)?.position;
 
         if (pickedPosition) {
 
@@ -95,7 +98,7 @@ function CameraController(viewer, callback) {
     const rightDown = function (event) {
         canZoom = true;
 
-        pickedPosition = pick(event.position);
+        pickedPosition = pick(viewer, event.position)?.position;
 
         if (pickedPosition) {
             mouseMode = RIGHT;
@@ -196,14 +199,10 @@ function CameraController(viewer, callback) {
     }
 
     const wheel = function (event) {
-        // if (!canZoom) {
-        //    // viewer.container.dispatchEvent();
-        //     return;
-        // }
 
         stopDrag();
 
-        const target = pick(mouseMovePosition);
+        const target = pick(viewer, mouseMovePosition)?.position;
 
         if (target) {
 
