@@ -237,19 +237,26 @@ class MapLayoutBuilder:
             "top-right": [],
             "bottom-right": [],
         }
+        
+    def bottom_right(self, *widgets):
+        for widget in widgets:
+            self.widgets["bottom-right"].append(widget)
+        return self
+    
+    def top_right(self, *widgets):
+        for widget in widgets:
+            self.widgets["top-right"].append(widget)
+        return self
 
-    def add(self, widget: DOMWidget, position="bottom-right"):
-        """
-        Adds a widget to layout.
+    def bottom_left(self, *widgets):
+        for widget in widgets:
+            self.widgets["bottom-left"].append(widget)
+        return self
 
-        Args:
-            widget (DomWidget):
-                The widget to be added
-            position (str, optional):
-                The position where the widget should be displayed. Possible values are
-                `top-left`, `bottom-left`, `top-right`, `bottom-right` (default).
-        """
-        self.widgets[position].append(widget)
+    def top_left(self, *widgets):
+        for widget in widgets:
+            self.widgets["top-left"].append(widget)
+        return self
 
     def build(self):
         """
@@ -317,13 +324,13 @@ def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True
     """
     layout = MapLayoutBuilder(cesium)
     if home:
-        layout.add(HomeWidget(cesium), "top-left")
+        layout.top_left(HomeWidget(cesium))
     if fullscreen:
-        layout.add(FullScreenWidget(), "top-left")
+        layout.top_left(FullScreenWidget())
     if transparency:
-        layout.add(transparency_button(cesium, [1, 0.8, 0.3]), "top-left")
+        layout.top_left(transparency_button(cesium, [1, 0.8, 0.3]))
     if slider and len(cesium.data) > 1:
-        layout.add(selection_slider(cesium), "bottom-right")
+        layout.bottom_right(selection_slider(cesium))
 
     return layout
 
