@@ -96,13 +96,10 @@ function render({ model, el }) {
     const startValue = model.get("value");
 
     const update = Slider(el, startMin, startMax, startValue, ({type, value}) => {
-        console.log(value)
-        console.log("sliderWiget: set " + value)
         model.set("value", value);
         model.save_changes();
     });
     model.on("change:value", function () {
-        console.log("sliderWiget: received " + model.get("value"))
         update(model.get("value"));
     });
 }
