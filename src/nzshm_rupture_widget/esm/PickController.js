@@ -5,9 +5,9 @@ function PickController(viewer, style, callback) {
 
     const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
 
-    let lastPicked = undefined
+    let lastPicked
 
-    const getMessage = function (picked) {
+    const getMessage = function (picked, windowPosition) {
         if (!picked) {
             return undefined;
         }
@@ -16,12 +16,11 @@ function PickController(viewer, style, callback) {
         }
         if (picked?.object?.id instanceof Cesium.Entity) {
 
-            // console.log(picked);
             const entity = picked.object.id;
             if (lastPicked == entity) {
                 return undefined
             }
-            if(style) {
+            if (style) {
                 styleEntity(entity, style);
             }
             recoverEntityStyle(lastPicked)
@@ -35,6 +34,7 @@ function PickController(viewer, style, callback) {
                 source: "entity",
                 entity,
                 properties,
+                windowPosition,
                 position: picked.position
             }
         }
@@ -42,27 +42,12 @@ function PickController(viewer, style, callback) {
 
     handler.setInputAction(function (event) {
         const picked = pick(viewer, event.endPosition);
-        const message = getMessage(picked);
+        const message = getMessage(picked, event.endPosition);
 
         if (message) {
-
-            if(message.entity && style) {
-
-            }
-
             callback(message);
         }
 
-
-        // if (picked instanceof Cesium.Cesium3DTileFeature) {
-        //     picked.color = Cesium.Color.YELLOW;
-        // }
-        // if (picked) {
-        //     module.send({
-        //         msg: "pick",
-        //         properties: picked.properties
-        //     })
-        // }
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 }
 

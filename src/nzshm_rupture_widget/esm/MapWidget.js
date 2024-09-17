@@ -21,9 +21,6 @@ function render({ model, el }) {
 
     const div = document.createElement("div");
     div.id = "cesiumContainer";
-    // div.style.width = model.get("width");
-    // div.style.height = model.get("height");
-
     div.style.width = "100%";
     div.style.height = "100%";
 
@@ -69,7 +66,9 @@ function render({ model, el }) {
     // prevent default popups
     viewer.selectedEntityChanged.addEventListener(function (selectedEntity) {
         if (selectedEntity) {
-            viewer.selectedEntity = undefined;
+            if (model.get("no_info")) {
+                viewer.selectedEntity = undefined;
+            }
         }
     });
 
@@ -87,17 +86,16 @@ function render({ model, el }) {
     const hover_style = model.get("hover_style");
 
     PickController(viewer, hover_style, (picked => {
-        const { source, properties } = picked;
+        const { source, properties, windowPosition } = picked;
         if (source !== 'ellipsoid') {
-            console.log("send hover event")
-            model.send({ msg: "pick", source, properties });
+            model.send({ msg: "pick", source, properties, windowPosition });
         }
     }));
 
 
     const data = model.get("data");
 
-    var selected = model.get("selection") || 0;
+    let selected = model.get("selection") || 0;
     const dataSources = [];
 
     for (const geojson of data) {

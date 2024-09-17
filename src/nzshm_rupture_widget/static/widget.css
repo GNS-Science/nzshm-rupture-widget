@@ -7,10 +7,6 @@
   display: none !important;
 }
 
-/* .top3DMapContainer {
-
-} */
-
 .bottomRight3DMap {
   pointer-events: none;
   overflow: hidden;
@@ -31,8 +27,6 @@
   height: 15px;
   width: 15px;
   margin: 6px;
-  /* margin-top: auto;
-  margin-bottom: auto; */
 }
 
 .controlButton3DMap:hover {
