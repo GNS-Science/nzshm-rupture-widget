@@ -1,3 +1,6 @@
+/**
+ * Button that can turn on fullscreen mode for a map
+ */
 function render({ model, el }) {
 
     const button = document.createElement("i");

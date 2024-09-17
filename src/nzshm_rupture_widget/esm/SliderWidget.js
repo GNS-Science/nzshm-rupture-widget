@@ -4,8 +4,18 @@ function asInt(value) {
     }
     return value;
 }
-
-function Slider(parent, min, max, selected, callback) {
+/**
+ * An HTML slider with stepping buttons.
+ * 
+ * TODO: add animation, play button, rate slider.
+ * @param {HTMLElement} parent the parent Element
+ * @param {Number} min minimum value (inclusive)
+ * @param {Number} max maximum value (inclusive)
+ * @param {Number} value the currentl value
+ * @param {Function} callback 
+ * @returns Function to set the `selected` value
+ */
+function Slider(parent, min, max, value, callback) {
 
     const div = document.createElement("div");
     div.classList.add("sliderWidget");
@@ -15,7 +25,7 @@ function Slider(parent, min, max, selected, callback) {
     slider.classList.add("rangeSlider");
     slider.min = min;
     slider.max = max;
-    slider.value = selected;
+    slider.value = value;
 
     const sliderForward = document.createElement("div");
     sliderForward.classList.add("fa");
@@ -76,6 +86,9 @@ function Slider(parent, min, max, selected, callback) {
     }
 }
 
+/**
+ * AnyWidget render function for a slider widget that uses `Slider`
+ */
 function render({ model, el }) {
 
     const startMin = model.get("min");

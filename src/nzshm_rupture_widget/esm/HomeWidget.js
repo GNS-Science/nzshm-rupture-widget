@@ -1,3 +1,6 @@
+/**
+ * Button that can make a map navigate "home"
+ */
 function render({ model, el }) {
 
     const button = document.createElement("div");

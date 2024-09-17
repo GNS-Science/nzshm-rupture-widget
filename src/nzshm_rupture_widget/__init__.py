@@ -3,7 +3,7 @@ import pathlib
 
 import anywidget
 import traitlets
-from ipywidgets import Box, HTML, jslink, GridBox, Layout, DOMWidget
+from ipywidgets import Box, HTML, jslink, GridBox, Layout
 
 try:
     __version__ = importlib.metadata.version("nzshm_rupture_widget")
@@ -47,7 +47,7 @@ class CesiumWidget(anywidget.AnyWidget):
 
     """
 
-    _esm = pathlib.Path(__file__).parent / "static" / "MapWidget.js"
+    _esm = pathlib.Path(__file__).parent / "static" / "CesiumWidget.js"
     _css = pathlib.Path(__file__).parent / "static" / "widget.css"
     _camera = traitlets.Dict().tag(sync=True)
     data = traitlets.List().tag(sync=True)
@@ -237,23 +237,47 @@ class MapLayoutBuilder:
             "top-right": [],
             "bottom-right": [],
         }
-        
+
     def bottom_right(self, *widgets):
+        """
+        Adds `DOMWidget` widgets to the `bottom_right` area of the map.
+
+        Returns:
+            MapLayoutBuilder: this instance
+        """
         for widget in widgets:
             self.widgets["bottom-right"].append(widget)
         return self
-    
+
     def top_right(self, *widgets):
+        """
+        Adds `DOMWidget` widgets to the `top_right` area of the map.
+
+        Returns:
+            MapLayoutBuilder: this instance
+        """
         for widget in widgets:
             self.widgets["top-right"].append(widget)
         return self
 
     def bottom_left(self, *widgets):
+        """
+        Adds `DOMWidget` widgets to the `bottom_left` area of the map.
+
+        Returns:
+            MapLayoutBuilder: this instance
+        """
         for widget in widgets:
             self.widgets["bottom-left"].append(widget)
         return self
 
     def top_left(self, *widgets):
+        """
+        Adds `DOMWidget` widgets to the `top_left` area of the map.
+
+        Returns:
+            MapLayoutBuilder: this instance
+        """
         for widget in widgets:
             self.widgets["top-left"].append(widget)
         return self
@@ -307,15 +331,15 @@ def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True
     """
     Creates a MapLayoutBuilder with default widgets.
     Args:
-        cesium (CesiumWidget): 
+        cesium (CesiumWidget):
             the CesiumWidget
         home (bool, optional):
             whether to add a home button. Defaults to True.
-        fullscreen (bool, optional): 
+        fullscreen (bool, optional):
             whether tpo add a full screen button. Defaults to True.
-        transparency (bool, optional): 
+        transparency (bool, optional):
             whether to add a transparency button. Defaults to True.
-        slider (bool, optional): 
+        slider (bool, optional):
             whether to add a slider. Defaults to True.
 
     Returns:
@@ -334,7 +358,8 @@ def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True
 
     return layout
 
-def geojson_3d_map(data:list):
+
+def geojson_3d_map(data: list):
     cesium = CesiumWidget(data=data)
     layout_builder = decorate(cesium)
     return layout_builder.build()
