@@ -1,9 +1,9 @@
 function nextValue(value, values) {
-    const index = values.findIndex(candidate => candidate > value)
-    if (index === -1) {
+    const index = values.indexOf(value)
+    if ((index + 1) >= values.length) {
         return values[0]
     }
-    return values[index]
+    return values[index + 1]
 }
 
 function render({ model, el }) {
@@ -14,7 +14,7 @@ function render({ model, el }) {
     button.classList.add("controlButton3DMap")
 
     button.addEventListener("click", function (event) {
-        const values = model.get("values") || [0, 1]
+        const values = model.get("values")
         const value = model.get("value")
         model.set("value", nextValue(value, values))
     })
