@@ -13,25 +13,30 @@ except importlib.metadata.PackageNotFoundError:
 
 class CesiumWidget(anywidget.AnyWidget):
     """
-    A map widget encapsulating a CesiumJS Viewer for displaying 3D GeoJSON data.
+    A map widget encapsulating a [CesiumJS](https://cesium.com/platform/cesiumjs/) Viewer for displaying 3D GeoJSON data.
 
-    A GeoJSON `FeatureCollection` may have the attribute `elevationToMeters` which will be
-    multiplied with each elevation component of each coordinate. If not specified, this value
-    defaults to `-1000` to support `OpenSHA` geometry. Set this attribute to `1` if
-    coordinates are alreay in meters.
+    GeoJSON:
+        `CesiumWidget` accepts a number of non-standard attributes.
+        
+        - `elevationToMeters`: A GeoJSON `FeatureCollection` may have the attribute `elevationToMeters` which will be
+                         multiplied with each elevation component of each coordinate. If not specified, this value
+                         defaults to `-1000` to support `OpenSHA` geometry. Set this attribute to `1` if
+                         coordinates are alreay in meters.
 
-    GeoJSON styling:
-        CesiumJS supports [simplestyle](https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0) properties in a Feature.
+        - Styling:
+            
+            CesiumJS supports [simplestyle](https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0) properties in a Feature.
 
-        Additionally, `CesiumWidget` supports a `Leaflet`-inspired `style` property with the folling sub-properties:
-        - stroke: whether lines should be drawn
-        - color: line color
-        - weight: line thickness
-        - opacity: line opacity
-        - fill: whether a polygon should have a fill
-        - fillColor: polygon fill color
-        - fillOpacity: polygon fill opacity
-        - extrusion: clamps polygons to the ground and extrudes them to this height in meters
+            Additionally, `CesiumWidget` supports a `Leaflet`-inspired `style` property with the folling sub-properties:
+            
+            - `stroke`: whether lines should be drawn
+            - `color`: line color
+            - `weight`: line thickness
+            - `opacity`: line opacity
+            - `fill`: whether a polygon should have a fill
+            - `fillColor`: polygon fill color
+            - `fillOpacity`: polygon fill opacity
+            - `extrusion`: clamps polygons to the ground and extrudes them to this height in meters
 
         Note that this means that a `fill` value directly in the properties is polygon fill color, while a `fill` in
         the `style` property is a boolean that switches fill on or off.
@@ -70,10 +75,12 @@ class CesiumWidget(anywidget.AnyWidget):
     def on_hover(self, callback):
         """
         Registers a `callback` that is invoked when the mouse hovers over a new GeoJSON entity.
+        
         Parameters:
-            callback (function):
-            will be called with events of the structure:
-            {"msg" : "pick", "source" : "entity", "properties" : {...}}
+            callback (function): will be called with events of the structure:
+                ```
+                {"msg" : "pick", "source" : "entity", "properties" : {...}}
+                ```
         """
         self._hover_callback = callback
         if not self._on_msg_set:
@@ -98,6 +105,8 @@ class SliderWidget(anywidget.AnyWidget):
             The maximum value
         value (int):
             The value
+        title (string):
+            Tooltip text
     """
 
     _esm = pathlib.Path(__file__).parent / "static" / "SliderWidget.js"
@@ -128,7 +137,7 @@ class HomeWidget(anywidget.AnyWidget):
     # see https://github.com/manzt/anywidget/issues/650#issuecomment-2286472536
     def __init__(self, map: CesiumWidget):
         """
-        Parameters
+        Parameters:
             map (CesiumWidget):
         """
         super().__init__()
@@ -146,6 +155,8 @@ class ValueButtonWidget(anywidget.AnyWidget):
             the current value
         icon (string):
             a CSS class. Classes already assigned to the HTML element are `fa` and `controlButton3DMap`
+        title (string):
+            tooltip text
     """
 
     _esm = pathlib.Path(__file__).parent / "static" / "ValueButtonWidget.js"
@@ -296,6 +307,7 @@ class MapLayoutBuilder:
     def build(self):
         """
         Creates a widget that contains all added widgets.
+        
         Returns:
             GridBox:
                 The widget.
@@ -341,13 +353,14 @@ class MapLayoutBuilder:
 def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True, slider=True):
     """
     Creates a MapLayoutBuilder with default widgets.
-    Args:
+    
+    Parameters:
         cesium (CesiumWidget):
             the CesiumWidget
         home (bool, optional):
             whether to add a home button. Defaults to True.
         fullscreen (bool, optional):
-            whether tpo add a full screen button. Defaults to True.
+            whether to add a full screen button. Defaults to True.
         transparency (bool, optional):
             whether to add a transparency button. Defaults to True.
         slider (bool, optional):
@@ -372,7 +385,7 @@ def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True
 
 def geojson_3d_map(data: list):
     """
-    Returns a map with default controls. No further widgets may be added.
+    Creates a map with default controls. No further widgets may be added.
 
     The `CesiumWidget` can be obtained with
     ```

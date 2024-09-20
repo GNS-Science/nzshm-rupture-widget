@@ -139,21 +139,21 @@ function render({ model, el }) {
         viewer.scene.globe.translucency.frontFaceAlpha = model.get("globe_opacity");
     });
 
-    div.addEventListener("contextmenu", function (ev) {
-        ev.stopPropagation();
-    })
-
     model.on("msg:custom", function (msg) {
         if (msg?.action === 'home') {
             viewer.zoomTo(dataSources[selected]);
         }
     });
 
+
+    div.addEventListener("contextmenu", function (ev) {
+        ev.stopPropagation();
+    })
     el.appendChild(div);
 
     // clean-up function
     return function () {
-        console.log("destroy map_3d_widget");
+        console.log("destroy CesiumWidget");
         while (dataSources.length) {
             dataSources.pop();
         }

@@ -5,7 +5,6 @@ import { styleEntity, recoverEntityStyle } from "./styles";
  * Handles hover (and in the future click) events and calls the callback with any Entity that
  * might be picked (under the mouse pointer) at the time.
  * 
- * TODO: should style handling actually be in here?
  * @param {Cesium.Viewer} viewer 
  * @param {{}} style 
  * @param {function} callback 
