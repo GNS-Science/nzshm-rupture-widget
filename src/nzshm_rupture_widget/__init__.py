@@ -15,6 +15,11 @@ class CesiumWidget(anywidget.AnyWidget):
     """
     A map widget encapsulating a CesiumJS Viewer for displaying 3D GeoJSON data.
 
+    A GeoJSON `FeatureCollection` may have the attribute `elevationToMeters` which will be
+    multiplied with each elevation component of each coordinate. If not specified, this value
+    defaults to `-1000` to support `OpenSHA` geometry. Set this attribute to `1` if
+    coordinates are alreay in meters.
+
     GeoJSON styling:
         CesiumJS supports [simplestyle](https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0) properties in a Feature.
 
@@ -100,6 +105,7 @@ class SliderWidget(anywidget.AnyWidget):
     min = traitlets.Int(0).tag(sync=True)
     max = traitlets.Int(10).tag(sync=True)
     value = traitlets.Int(0).tag(sync=True)
+    title = traitlets.Unicode("").tag(sync=True)
 
 
 class FullScreenWidget(anywidget.AnyWidget):
@@ -147,6 +153,7 @@ class ValueButtonWidget(anywidget.AnyWidget):
     values = traitlets.List([0, 1]).tag(sync=True)
     value = traitlets.Any(0).tag(sync=True)
     icon = traitlets.Unicode("fa-exclamation").tag(sync=True)
+    title = traitlets.Unicode("").tag(sync=True)
 
 
 def transparency_button(map_widget: CesiumWidget, values: list):
@@ -164,7 +171,9 @@ def transparency_button(map_widget: CesiumWidget, values: list):
         ValueButtonWidget:
             the button widget
     """
-    widget = ValueButtonWidget(values=values, value=values[0], icon="fa-eye")
+    widget = ValueButtonWidget(
+        values=values, value=values[0], icon="fa-eye", title="Change Globe Opacity"
+    )
     jslink((map_widget, "globe_opacity"), (widget, "value"))
     return widget
 
@@ -204,7 +213,9 @@ def selection_slider(map_widget: CesiumWidget):
         SliderWidget:
             A slider widget that is linked to the `map_widget`
     """
-    slider_widget = SliderWidget(min=0, max=len(map_widget.data) - 1, value=0)
+    slider_widget = SliderWidget(
+        min=0, max=len(map_widget.data) - 1, value=0, title="Select GeoJSON Layer"
+    )
     jslink((map_widget, "selection"), (slider_widget, "value"))
     return slider_widget
 
@@ -360,6 +371,21 @@ def decorate(cesium: CesiumWidget, home=True, fullscreen=True, transparency=True
 
 
 def geojson_3d_map(data: list):
+    """
+    Returns a map with default controls. No further widgets may be added.
+
+    The `CesiumWidget` can be obtained with
+    ```
+        map = geojson_3d_map(geojson_data)
+        cesium = map.children[0]
+    ```
+
+    Args:
+        data (list): a list of GeoJSON objects
+
+    Returns:
+        GridBox: a widget containing the map and control widgets.
+    """
     cesium = CesiumWidget(data=data)
     layout_builder = decorate(cesium)
     return layout_builder.build()

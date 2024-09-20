@@ -12,6 +12,7 @@ function render({ model, el }) {
     button.classList.add("fa")
     button.classList.add(model.get("icon"))
     button.classList.add("controlButton3DMap")
+    button.title = model.get("title")
 
     button.addEventListener("click", function (event) {
         const values = model.get("values")

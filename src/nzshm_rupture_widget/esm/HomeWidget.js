@@ -7,6 +7,7 @@ function render({ model, el }) {
     button.classList.add("fa");
     button.classList.add("fa-home");
     button.classList.add("controlButton3DMap");
+    button.title = "Navigate Home"
 
     button.addEventListener("click", function (event) {
         model.send({msg: "home"});

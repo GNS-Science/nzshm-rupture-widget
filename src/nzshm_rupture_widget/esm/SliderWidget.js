@@ -15,10 +15,11 @@ function asInt(value) {
  * @param {Function} callback 
  * @returns Function to set the `selected` value
  */
-function Slider(parent, min, max, value, callback) {
+function Slider(parent, min, max, value, title, callback) {
 
     const div = document.createElement("div");
     div.classList.add("sliderWidget");
+    div.title = title
 
     const slider = document.createElement("input");
     slider.type = "range";
@@ -94,8 +95,9 @@ function render({ model, el }) {
     const startMin = model.get("min");
     const startMax = model.get("max");
     const startValue = model.get("value");
+    const title = model.get("title")
 
-    const update = Slider(el, startMin, startMax, startValue, ({type, value}) => {
+    const update = Slider(el, startMin, startMax, startValue, title, ({ type, value }) => {
         model.set("value", value);
         model.save_changes();
     });

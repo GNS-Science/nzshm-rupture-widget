@@ -7,6 +7,7 @@ function render({ model, el }) {
     button.classList.add("fa");
     button.classList.add("fa-arrows");
     button.classList.add("controlButton3DMap");
+    button.title = "Fullscreen"
 
     button.addEventListener("click", function (event) {
         if (!document.fullscreenElement) {

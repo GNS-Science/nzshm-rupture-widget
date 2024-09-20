@@ -15,6 +15,8 @@ export const pick = function (viewer, windowPosition) {
     const ray = viewer.camera.getPickRay(windowPosition);
     const picked = viewer.scene.pickFromRay(ray);
     if (picked?.object) {
+        // GeoJsonDataSource:
+        // picked.object.id.entityCollection.owner
         return picked;
     }
 
