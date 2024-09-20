@@ -1,6 +1,7 @@
 {
     "scripts": {
         "dev": "node esbuild-dev.mjs",
+        "docs": "mkdocs build",
         "test": "vitest",
         "build": "node esbuild-build.mjs"
     },

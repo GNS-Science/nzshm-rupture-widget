@@ -1,3 +1,44 @@
+"""
+
+Provides `ipywidgets` for displaying interactive 3D GeoJSON ruptures in a `Jupyter Notebook`.
+
+Examples:
+
+    # display a geojson object in a map
+    geojson_3d_map([geojson_object])
+    
+    # add two geojson objects to a map and provide a slider to select which one to display
+    geojson_3d_map([geojson_a, geojson_b])
+    
+    # create a cesium map and display two geojson objects at once
+    cesium = CesiumWidget(data = [geojson_a, geojson_b], selection=-1)
+    # add a layout with standard controls
+    layout = decorate(cesium)
+    # create an ipywidgets.HTML widget and display it in the top right corner of the map
+    layout.top_right(HTML("Hello World"))
+    # display the map
+    layout.build()
+
+
+
+Classes:
+
+- `CesiumWidget` - a map widget
+- `SliderWidget` - a generic slider widget with step buttons
+- `FullScreenWidget` - a button that displays the map in fullscreen mode
+- `HomeWidget` - a button that tells a map to navigate "home"
+- `ValueButtonWidget` - a button that can cycle through a pre-set list of values
+- `MapLayoutBuilder` - builds layouts for maps and map widgets
+
+Functions:
+
+- `transparency_button(map_widget, values)` - creates a button that lets users change the opacity of the map globe
+- `legend(title, values)` - creates a map legend
+- `selection_slider(map_widget)` - creates a slider that lets user switch between GeoJSON layers
+- `decorate(cesium, home, fullscreen, transparency, slider)` - decorates a map with standard widgets
+- `geojson_3d_map(geojson)` - displays a map with default controls.
+"""
+
 import importlib.metadata
 import pathlib
 
