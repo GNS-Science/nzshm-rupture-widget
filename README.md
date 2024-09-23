@@ -10,6 +10,8 @@ Developed for displaying faults and ruptures for [Te Tauira Matapae Pūmate Rū 
 pip install nzshm_rupture_widget
 ```
 
+*Important*: after installing `nzshm_rupture_widget`, restart your browser. Closing and re-opening a tab is not sufficient.
+
 ## Usage
 
 TODO
@@ -39,3 +41,31 @@ http://127.0.0.1:8888/lab?token=9123650c1ac2ea62f0a7e85344cf70b2d0afe7a1bd8a82cd
 Follow the link to access JupyterLab. `nzshm-rupture-widget` will be installed with `pip -e`. 
 
 See [anywidget](https://anywidget.dev/) for widget development and [CesiumJS](https://cesium.com/platform/cesiumjs/) for map development.
+
+### Build and Test
+
+Required tools:
+
+- node
+- pip
+
+Setting up the JavaScript tools:
+
+```
+npm update
+npm install
+```
+
+Setting up the Python tools (in your Python environment):
+
+```
+pip install -r .\requirements.txt
+```
+
+Build scripts are defined in `package.json` and run with `npm run`. For example,
+
+```
+npm run dev
+```
+
+Starts an `esbuild` process that watches JavaScript files for changes and bundles them so that they are available in the `samples.dev.ipynb` notebook.

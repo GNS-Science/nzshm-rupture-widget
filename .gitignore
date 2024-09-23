@@ -7,12 +7,4 @@ dist
 __pycache__
 .ipynb_checkpoints
 
-
-src/nzshm_rupture_widget/static/widget.js
-src/nzshm_rupture_widget/static/SliderWidget.js
-src/nzshm_rupture_widget/static/FullScreenWidget.js
-src/nzshm_rupture_widget/static/HomeWidget.js
-src/nzshm_rupture_widget/static/MapWidget.js
-src/nzshm_rupture_widget/static/ValueButtonWidget.js
-src/nzshm_rupture_widget/static/CesiumWidget.js
 envBuild/

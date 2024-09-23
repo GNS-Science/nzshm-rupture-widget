@@ -3,9 +3,10 @@
         "dev": "node esbuild-dev.mjs",
         "docs": "mkdocs build",
         "test": "vitest",
-        "build": "node esbuild-build.mjs"
+        "build": "node esbuild-build.mjs && hatch build"
     },
     "devDependencies": {
+        "esbuild": "^0.24.0",
         "vitest": "^2.0.5"
     }
 }
