@@ -59,7 +59,7 @@ npm install
 Setting up the Python tools (in your Python environment):
 
 ```
-pip install -r .\requirements.txt
+pip install -r ./requirements.txt
 ```
 
 Build scripts are defined in `package.json` and run with `npm run`. For example,
