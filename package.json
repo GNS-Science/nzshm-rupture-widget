@@ -3,7 +3,9 @@
         "dev": "node esbuild-dev.mjs",
         "docs": "mkdocs build",
         "test": "vitest",
-        "build": "node esbuild-build.mjs && hatch build"
+        "package": "mkdocs build && node esbuild-build.mjs && hatch build",
+        "docker": "docker run -it --rm -v .:/home/jovyan/nzshm-rupture-widget --name rupture-widget-dev -p 8888:8888 nzshm-rupture-widget",
+        "docker-build": "docker build -t nzshm-rupture-widget ."
     },
     "devDependencies": {
         "esbuild": "^0.24.0",
