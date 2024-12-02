@@ -1,0 +1,3745 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+    
+    
+      
+        <title>NZSHM Rupture Widget Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nzshm_rupture_widget" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="NZSHM Rupture Widget Docs" class="md-header__button md-logo" aria-label="NZSHM Rupture Widget Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NZSHM Rupture Widget Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="NZSHM Rupture Widget Docs" class="md-nav__button md-logo" aria-label="NZSHM Rupture Widget Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NZSHM Rupture Widget Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      nzshm_rupture_widget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nzshm_rupture_widget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.__version__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __version__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      CesiumWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CesiumWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.data" class="md-nav__link">
+    <span class="md-ellipsis">
+      data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.globe_opacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      globe_opacity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.hover_style" class="md-nav__link">
+    <span class="md-ellipsis">
+      hover_style
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.no_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      no_info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.go_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      go_home
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.on_hover" class="md-nav__link">
+    <span class="md-ellipsis">
+      on_hover
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.FullScreenWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      FullScreenWidget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.HomeWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      HomeWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HomeWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.HomeWidget.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      MapLayoutBuilder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MapLayoutBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.cesium" class="md-nav__link">
+    <span class="md-ellipsis">
+      cesium
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.grid_box" class="md-nav__link">
+    <span class="md-ellipsis">
+      grid_box
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      widgets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.bottom_left" class="md-nav__link">
+    <span class="md-ellipsis">
+      bottom_left
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.bottom_right" class="md-nav__link">
+    <span class="md-ellipsis">
+      bottom_right
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.top_left" class="md-nav__link">
+    <span class="md-ellipsis">
+      top_left
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.top_right" class="md-nav__link">
+    <span class="md-ellipsis">
+      top_right
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      SliderWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SliderWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.max" class="md-nav__link">
+    <span class="md-ellipsis">
+      max
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.min" class="md-nav__link">
+    <span class="md-ellipsis">
+      min
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      ValueButtonWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ValueButtonWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.icon" class="md-nav__link">
+    <span class="md-ellipsis">
+      icon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.values" class="md-nav__link">
+    <span class="md-ellipsis">
+      values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.decorate" class="md-nav__link">
+    <span class="md-ellipsis">
+      decorate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.geojson_3d_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      geojson_3d_map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      legend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.selection_slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      selection_slider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.transparency_button" class="md-nav__link">
+    <span class="md-ellipsis">
+      transparency_button
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      nzshm_rupture_widget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="nzshm_rupture_widget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.__version__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __version__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      CesiumWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CesiumWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.data" class="md-nav__link">
+    <span class="md-ellipsis">
+      data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.globe_opacity" class="md-nav__link">
+    <span class="md-ellipsis">
+      globe_opacity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.hover_style" class="md-nav__link">
+    <span class="md-ellipsis">
+      hover_style
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.no_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      no_info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.go_home" class="md-nav__link">
+    <span class="md-ellipsis">
+      go_home
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.CesiumWidget.on_hover" class="md-nav__link">
+    <span class="md-ellipsis">
+      on_hover
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.FullScreenWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      FullScreenWidget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.HomeWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      HomeWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HomeWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.HomeWidget.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      MapLayoutBuilder
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MapLayoutBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.cesium" class="md-nav__link">
+    <span class="md-ellipsis">
+      cesium
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.grid_box" class="md-nav__link">
+    <span class="md-ellipsis">
+      grid_box
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      widgets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.bottom_left" class="md-nav__link">
+    <span class="md-ellipsis">
+      bottom_left
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.bottom_right" class="md-nav__link">
+    <span class="md-ellipsis">
+      bottom_right
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.build" class="md-nav__link">
+    <span class="md-ellipsis">
+      build
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.top_left" class="md-nav__link">
+    <span class="md-ellipsis">
+      top_left
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.MapLayoutBuilder.top_right" class="md-nav__link">
+    <span class="md-ellipsis">
+      top_right
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      SliderWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SliderWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.max" class="md-nav__link">
+    <span class="md-ellipsis">
+      max
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.min" class="md-nav__link">
+    <span class="md-ellipsis">
+      min
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.SliderWidget.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget" class="md-nav__link">
+    <span class="md-ellipsis">
+      ValueButtonWidget
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ValueButtonWidget">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.icon" class="md-nav__link">
+    <span class="md-ellipsis">
+      icon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.title" class="md-nav__link">
+    <span class="md-ellipsis">
+      title
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.value" class="md-nav__link">
+    <span class="md-ellipsis">
+      value
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.ValueButtonWidget.values" class="md-nav__link">
+    <span class="md-ellipsis">
+      values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.decorate" class="md-nav__link">
+    <span class="md-ellipsis">
+      decorate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.geojson_3d_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      geojson_3d_map
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      legend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.selection_slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      selection_slider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nzshm_rupture_widget.transparency_button" class="md-nav__link">
+    <span class="md-ellipsis">
+      transparency_button
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Home</h1>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="nzshm_rupture_widget" class="doc doc-heading">
+            <code>nzshm_rupture_widget</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Provides <code>ipywidgets</code> for displaying interactive 3D GeoJSON ruptures in a <code>Jupyter Notebook</code>.</p>
+<p>Examples:</p>
+<pre><code># display a geojson object in a map
+geojson_3d_map([geojson_object])
+
+# add two geojson objects to a map and provide a slider to select which one to display
+geojson_3d_map([geojson_a, geojson_b])
+
+# create a cesium map and display two geojson objects at once
+cesium = CesiumWidget(data = [geojson_a, geojson_b], selection=-1)
+# add a layout with standard controls
+layout = decorate(cesium)
+# create an ipywidgets.HTML widget and display it in the top right corner of the map
+layout.top_right(HTML("Hello World"))
+# display the map
+layout.build()
+</code></pre>
+<p>Classes:</p>
+<ul>
+<li><code>CesiumWidget</code> - a map widget</li>
+<li><code>SliderWidget</code> - a generic slider widget with step buttons</li>
+<li><code>FullScreenWidget</code> - a button that displays the map in fullscreen mode</li>
+<li><code>HomeWidget</code> - a button that tells a map to navigate "home"</li>
+<li><code>ValueButtonWidget</code> - a button that can cycle through a pre-set list of values</li>
+<li><code>MapLayoutBuilder</code> - builds layouts for maps and map widgets</li>
+</ul>
+<p>Functions:</p>
+<ul>
+<li><code>transparency_button(map_widget, values)</code> - creates a button that lets users change the opacity of the map globe</li>
+<li><code>legend(title, values)</code> - creates a map legend</li>
+<li><code>selection_slider(map_widget)</code> - creates a slider that lets user switch between GeoJSON layers</li>
+<li><code>decorate(cesium, home, fullscreen, transparency, slider)</code> - decorates a map with standard widgets</li>
+<li><code>geojson_3d_map(geojson)</code> - displays a map with default controls.</li>
+</ul>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="nzshm_rupture_widget.__version__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">__version__</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s1">&#39;nzshm_rupture_widget&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.CesiumWidget" class="doc doc-heading">
+            <code>CesiumWidget</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>anywidget.<span title="anywidget.AnyWidget">AnyWidget</span></code></p>
+
+
+        <p>A map widget encapsulating a <a href="https://cesium.com/platform/cesiumjs/">CesiumJS</a> Viewer for displaying 3D GeoJSON data.</p>
+
+
+<details class="geojson" open>
+  <summary>GeoJSON</summary>
+  <p><code>CesiumWidget</code> accepts a number of non-standard attributes.</p>
+<ul>
+<li>
+<p><code>elevationToMeters</code>: A GeoJSON <code>FeatureCollection</code> may have the attribute <code>elevationToMeters</code> which will be
+                 multiplied with each elevation component of each coordinate. If not specified, this value
+                 defaults to <code>-1000</code> to support <code>OpenSHA</code> geometry. Set this attribute to <code>1</code> if
+                 coordinates are alreay in meters.</p>
+</li>
+<li>
+<p>Styling:</p>
+<p>CesiumJS supports <a href="https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0">simplestyle</a> properties in a Feature.</p>
+<p>Additionally, <code>CesiumWidget</code> supports a <code>Leaflet</code>-inspired <code>style</code> property with the folling sub-properties:</p>
+<ul>
+<li><code>stroke</code>: whether lines should be drawn</li>
+<li><code>color</code>: line color</li>
+<li><code>weight</code>: line thickness</li>
+<li><code>opacity</code>: line opacity</li>
+<li><code>fill</code>: whether a polygon should have a fill</li>
+<li><code>fillColor</code>: polygon fill color</li>
+<li><code>fillOpacity</code>: polygon fill opacity</li>
+<li><code>extrusion</code>: clamps polygons to the ground and extrudes them to this height in meters</li>
+</ul>
+</li>
+</ul>
+<p>Note that this means that a <code>fill</code> value directly in the properties is polygon fill color, while a <code>fill</code> in
+the <code>style</code> property is a boolean that switches fill on or off.</p>
+</details>
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget.data" href="#nzshm_rupture_widget.CesiumWidget.data">data</a></code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a list of GeoJSON dicts to be displayed on the map. Modifying this attribute after the map has
+been rendered will not have an effect.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget.selection" href="#nzshm_rupture_widget.CesiumWidget.selection">selection</a></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>determines which entry of <code>data</code> should be displayed. If set to -1, all will be displayed.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget.hover_style" href="#nzshm_rupture_widget.CesiumWidget.hover_style">hover_style</a></code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a style to apply to polygons when the mouse hovers over them. Supported are <code>color</code>, <code>weight</code>, <code>opacity</code>, <code>fillColor</code>, <code>fillOpacity</code>.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget.no_info" href="#nzshm_rupture_widget.CesiumWidget.no_info">no_info</a></code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>suppresses Cesium's built-in GeoJSON properties pop-ups.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget.globe_opacity" href="#nzshm_rupture_widget.CesiumWidget.globe_opacity">globe_opacity</a></code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>allows for the adjustment of globe opacity to better inspect underground geometry. Note that
+a value of 1 causes all GeoJSON to be rendered on top of the globe.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CesiumWidget</span><span class="p">(</span><span class="n">anywidget</span><span class="o">.</span><span class="n">AnyWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A map widget encapsulating a [CesiumJS](https://cesium.com/platform/cesiumjs/) Viewer for displaying 3D GeoJSON data.</span>
+
+<span class="sd">    GeoJSON:</span>
+<span class="sd">        `CesiumWidget` accepts a number of non-standard attributes.</span>
+
+<span class="sd">        - `elevationToMeters`: A GeoJSON `FeatureCollection` may have the attribute `elevationToMeters` which will be</span>
+<span class="sd">                         multiplied with each elevation component of each coordinate. If not specified, this value</span>
+<span class="sd">                         defaults to `-1000` to support `OpenSHA` geometry. Set this attribute to `1` if</span>
+<span class="sd">                         coordinates are alreay in meters.</span>
+
+<span class="sd">        - Styling:</span>
+
+<span class="sd">            CesiumJS supports [simplestyle](https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0) properties in a Feature.</span>
+
+<span class="sd">            Additionally, `CesiumWidget` supports a `Leaflet`-inspired `style` property with the folling sub-properties:</span>
+
+<span class="sd">            - `stroke`: whether lines should be drawn</span>
+<span class="sd">            - `color`: line color</span>
+<span class="sd">            - `weight`: line thickness</span>
+<span class="sd">            - `opacity`: line opacity</span>
+<span class="sd">            - `fill`: whether a polygon should have a fill</span>
+<span class="sd">            - `fillColor`: polygon fill color</span>
+<span class="sd">            - `fillOpacity`: polygon fill opacity</span>
+<span class="sd">            - `extrusion`: clamps polygons to the ground and extrudes them to this height in meters</span>
+
+<span class="sd">        Note that this means that a `fill` value directly in the properties is polygon fill color, while a `fill` in</span>
+<span class="sd">        the `style` property is a boolean that switches fill on or off.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        data (list):</span>
+<span class="sd">            a list of GeoJSON dicts to be displayed on the map. Modifying this attribute after the map has</span>
+<span class="sd">            been rendered will not have an effect.</span>
+<span class="sd">        selection (int):</span>
+<span class="sd">            determines which entry of `data` should be displayed. If set to -1, all will be displayed.</span>
+<span class="sd">        hover_style (dict):</span>
+<span class="sd">            a style to apply to polygons when the mouse hovers over them. Supported are `color`, `weight`, `opacity`, `fillColor`, `fillOpacity`.</span>
+<span class="sd">        no_info (bool):</span>
+<span class="sd">            suppresses Cesium&#39;s built-in GeoJSON properties pop-ups.</span>
+<span class="sd">        globe_opacity (float):</span>
+<span class="sd">            allows for the adjustment of globe opacity to better inspect underground geometry. Note that</span>
+<span class="sd">            a value of 1 causes all GeoJSON to be rendered on top of the globe.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_esm</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;CesiumWidget.js&quot;</span>
+    <span class="n">_css</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;widget.css&quot;</span>
+    <span class="n">_camera</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">List</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">selection</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">hover_style</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">no_info</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Bool</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">globe_opacity</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_hover_callback</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_on_msg_set</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">_on_msg_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">buffer</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">msg</span><span class="p">[</span><span class="s2">&quot;msg&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;pick&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hover_callback</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hover_callback</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_hover</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Registers a `callback` that is invoked when the mouse hovers over a new GeoJSON entity.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            callback (function): will be called with events of the structure:</span>
+<span class="sd">                ```</span>
+<span class="sd">                {&quot;msg&quot; : &quot;pick&quot;, &quot;source&quot; : &quot;entity&quot;, &quot;properties&quot; : {...}}</span>
+<span class="sd">                ```</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hover_callback</span> <span class="o">=</span> <span class="n">callback</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_set</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">on_msg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_handler</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_set</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">go_home</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Causes the map to navigate &quot;home&quot;, which is the extent of the currently selected GeoJSON.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">({</span><span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">})</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">data</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">List</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.globe_opacity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">globe_opacity</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Float</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.hover_style" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">hover_style</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.no_info" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">no_info</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Bool</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.selection" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">selection</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.go_home" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">go_home</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Causes the map to navigate "home", which is the extent of the currently selected GeoJSON.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">go_home</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Causes the map to navigate &quot;home&quot;, which is the extent of the currently selected GeoJSON.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">({</span><span class="s2">&quot;action&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span><span class="p">})</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.CesiumWidget.on_hover" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">on_hover</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Registers a <code>callback</code> that is invoked when the mouse hovers over a new GeoJSON entity.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>callback</code></td>
+            <td>
+                  <code>function</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>will be called with events of the structure:</p>
+<pre><code>{&quot;msg&quot; : &quot;pick&quot;, &quot;source&quot; : &quot;entity&quot;, &quot;properties&quot; : {...}}
+</code></pre>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">on_hover</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Registers a `callback` that is invoked when the mouse hovers over a new GeoJSON entity.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        callback (function): will be called with events of the structure:</span>
+<span class="sd">            ```</span>
+<span class="sd">            {&quot;msg&quot; : &quot;pick&quot;, &quot;source&quot; : &quot;entity&quot;, &quot;properties&quot; : {...}}</span>
+<span class="sd">            ```</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_hover_callback</span> <span class="o">=</span> <span class="n">callback</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_set</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_msg</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_handler</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_on_msg_set</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.FullScreenWidget" class="doc doc-heading">
+            <code>FullScreenWidget</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>anywidget.<span title="anywidget.AnyWidget">AnyWidget</span></code></p>
+
+
+        <p>A button widget that sets the nearest ancestor with the <code>fullScreenTarget</code> class to fullscreen.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">FullScreenWidget</span><span class="p">(</span><span class="n">anywidget</span><span class="o">.</span><span class="n">AnyWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A button widget that sets the nearest ancestor with the `fullScreenTarget` class to fullscreen.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_esm</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;FullScreenWidget.js&quot;</span>
+    <span class="n">_css</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;widget.css&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.HomeWidget" class="doc doc-heading">
+            <code>HomeWidget</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>anywidget.<span title="anywidget.AnyWidget">AnyWidget</span></code></p>
+
+
+        <p>A button widget that calls the <code>go_home()</code> method on a <code>CesiumWidget</code>.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">HomeWidget</span><span class="p">(</span><span class="n">anywidget</span><span class="o">.</span><span class="n">AnyWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A button widget that calls the `go_home()` method on a `CesiumWidget`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_esm</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;HomeWidget.js&quot;</span>
+    <span class="n">_css</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;widget.css&quot;</span>
+
+    <span class="c1"># see https://github.com/manzt/anywidget/issues/650#issuecomment-2286472536</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters:</span>
+<span class="sd">            map (CesiumWidget):</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_msg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">widget</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">buffer</span><span class="p">:</span> <span class="nb">map</span><span class="o">.</span><span class="n">go_home</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.HomeWidget.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="nb">map</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>map</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget" href="#nzshm_rupture_widget.CesiumWidget">CesiumWidget</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">map</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        map (CesiumWidget):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">on_msg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">widget</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">buffer</span><span class="p">:</span> <span class="nb">map</span><span class="o">.</span><span class="n">go_home</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.MapLayoutBuilder" class="doc doc-heading">
+            <code>MapLayoutBuilder</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Creates a layout for adding widgets to a map.
+This class is not a widget itself. Call <code>build()</code> to create the widget.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MapLayoutBuilder</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a layout for adding widgets to a map.</span>
+<span class="sd">    This class is not a widget itself. Call `build()` to create the widget.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">cesium</span><span class="p">:</span> <span class="kc">None</span>
+    <span class="n">grid_box</span><span class="p">:</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cesium</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters:</span>
+<span class="sd">            cesium (CesiumWidget):</span>
+<span class="sd">                the map widget. All other widgets will be overlayed on top of this widget.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cesium</span> <span class="o">=</span> <span class="n">cesium</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span><span class="p">:</span>
+            <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">grid_area</span><span class="o">=</span><span class="s2">&quot;1 / 1 / -1 / -1&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">grid_area</span> <span class="o">=</span> <span class="s2">&quot;1 / 1 / -1 / -1&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;top-left&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;bottom-left&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;top-right&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;bottom-right&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds `DOMWidget` widgets to the `bottom_right` area of the map.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MapLayoutBuilder: this instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds `DOMWidget` widgets to the `top_right` area of the map.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MapLayoutBuilder: this instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds `DOMWidget` widgets to the `bottom_left` area of the map.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MapLayoutBuilder: this instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adds `DOMWidget` widgets to the `top_left` area of the map.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            MapLayoutBuilder: this instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Creates a widget that contains all added widgets.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GridBox:</span>
+<span class="sd">                The widget.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span>
+
+        <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cesium</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">]:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">])</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapLeftBar&quot;</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapTopLeft&quot;</span><span class="p">)</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">]:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">])</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapLeftBar&quot;</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapBottomLeft&quot;</span><span class="p">)</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">]:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">])</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapRightBar&quot;</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapTopRight&quot;</span><span class="p">)</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">]:</span>
+            <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">])</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapRightBar&quot;</span><span class="p">)</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapBottomRight&quot;</span><span class="p">)</span>
+            <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span> <span class="o">=</span> <span class="n">GridBox</span><span class="p">(</span>
+            <span class="n">children</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+            <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span>
+                <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="s2">&quot;400px&quot;</span><span class="p">,</span>
+                <span class="n">grid_template_rows</span><span class="o">=</span><span class="s2">&quot;50px auto 50px&quot;</span><span class="p">,</span>
+                <span class="n">grid_template_columns</span><span class="o">=</span><span class="s2">&quot;200px auto 300px&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;fullScreenTarget&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.cesium" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">cesium</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">cesium</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.grid_box" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">grid_box</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.widgets" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;top-left&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;bottom-left&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;top-right&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;bottom-right&#39;</span><span class="p">:</span> <span class="p">[]}</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">cesium</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>cesium</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget" href="#nzshm_rupture_widget.CesiumWidget">CesiumWidget</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the map widget. All other widgets will be overlayed on top of this widget.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cesium</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">        cesium (CesiumWidget):</span>
+<span class="sd">            the map widget. All other widgets will be overlayed on top of this widget.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cesium</span> <span class="o">=</span> <span class="n">cesium</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span><span class="p">:</span>
+        <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">Layout</span><span class="p">(</span><span class="n">grid_area</span><span class="o">=</span><span class="s2">&quot;1 / 1 / -1 / -1&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cesium</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">grid_area</span> <span class="o">=</span> <span class="s2">&quot;1 / 1 / -1 / -1&quot;</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;top-left&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;bottom-left&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;top-right&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;bottom-right&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.bottom_left" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bottom_left</span><span class="p">(</span><span class="o">*</span><span class="n">widgets</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds <code>DOMWidget</code> widgets to the <code>bottom_left</code> area of the map.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>MapLayoutBuilder</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this instance</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bottom_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds `DOMWidget` widgets to the `bottom_left` area of the map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        MapLayoutBuilder: this instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.bottom_right" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">bottom_right</span><span class="p">(</span><span class="o">*</span><span class="n">widgets</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds <code>DOMWidget</code> widgets to the <code>bottom_right</code> area of the map.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>MapLayoutBuilder</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this instance</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bottom_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds `DOMWidget` widgets to the `bottom_right` area of the map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        MapLayoutBuilder: this instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.build" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">build</span><span class="p">()</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a widget that contains all added widgets.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>GridBox</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The widget.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a widget that contains all added widgets.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        GridBox:</span>
+<span class="sd">            The widget.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span>
+
+    <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">cesium</span><span class="p">]</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">]:</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">])</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapLeftBar&quot;</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapTopLeft&quot;</span><span class="p">)</span>
+        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">]:</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-left&quot;</span><span class="p">])</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapLeftBar&quot;</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapBottomLeft&quot;</span><span class="p">)</span>
+        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">]:</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">])</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapRightBar&quot;</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapTopRight&quot;</span><span class="p">)</span>
+        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">]:</span>
+        <span class="n">bar</span> <span class="o">=</span> <span class="n">Box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;bottom-right&quot;</span><span class="p">])</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapRightBar&quot;</span><span class="p">)</span>
+        <span class="n">bar</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapBottomRight&quot;</span><span class="p">)</span>
+        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span> <span class="o">=</span> <span class="n">GridBox</span><span class="p">(</span>
+        <span class="n">children</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+        <span class="n">layout</span><span class="o">=</span><span class="n">Layout</span><span class="p">(</span>
+            <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="s2">&quot;400px&quot;</span><span class="p">,</span>
+            <span class="n">grid_template_rows</span><span class="o">=</span><span class="s2">&quot;50px auto 50px&quot;</span><span class="p">,</span>
+            <span class="n">grid_template_columns</span><span class="o">=</span><span class="s2">&quot;200px auto 300px&quot;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;fullScreenTarget&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_box</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.top_left" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">top_left</span><span class="p">(</span><span class="o">*</span><span class="n">widgets</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds <code>DOMWidget</code> widgets to the <code>top_left</code> area of the map.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>MapLayoutBuilder</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this instance</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">top_left</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds `DOMWidget` widgets to the `top_left` area of the map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        MapLayoutBuilder: this instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="nzshm_rupture_widget.MapLayoutBuilder.top_right" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">top_right</span><span class="p">(</span><span class="o">*</span><span class="n">widgets</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Adds <code>DOMWidget</code> widgets to the <code>top_right</code> area of the map.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>MapLayoutBuilder</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>this instance</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">top_right</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">widgets</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Adds `DOMWidget` widgets to the `top_right` area of the map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        MapLayoutBuilder: this instance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">widgets</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">widgets</span><span class="p">[</span><span class="s2">&quot;top-right&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">widget</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.SliderWidget" class="doc doc-heading">
+            <code>SliderWidget</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>anywidget.<span title="anywidget.AnyWidget">AnyWidget</span></code></p>
+
+
+        <p>A slider widget with step buttons.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.SliderWidget.min" href="#nzshm_rupture_widget.SliderWidget.min">min</a></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The minimum value</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.SliderWidget.max" href="#nzshm_rupture_widget.SliderWidget.max">max</a></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The maximum value</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.SliderWidget.value" href="#nzshm_rupture_widget.SliderWidget.value">value</a></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The value</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.SliderWidget.title" href="#nzshm_rupture_widget.SliderWidget.title">title</a></code></td>
+            <td>
+                  <code>string</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Tooltip text</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">SliderWidget</span><span class="p">(</span><span class="n">anywidget</span><span class="o">.</span><span class="n">AnyWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A slider widget with step buttons.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        min (int):</span>
+<span class="sd">            The minimum value</span>
+<span class="sd">        max (int):</span>
+<span class="sd">            The maximum value</span>
+<span class="sd">        value (int):</span>
+<span class="sd">            The value</span>
+<span class="sd">        title (string):</span>
+<span class="sd">            Tooltip text</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_esm</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;SliderWidget.js&quot;</span>
+    <span class="n">_css</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;widget.css&quot;</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">max</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.SliderWidget.max" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">max</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.SliderWidget.min" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">min</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.SliderWidget.title" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">title</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.SliderWidget.value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">value</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Int</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="nzshm_rupture_widget.ValueButtonWidget" class="doc doc-heading">
+            <code>ValueButtonWidget</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code>anywidget.<span title="anywidget.AnyWidget">AnyWidget</span></code></p>
+
+
+        <p>A button widget that cycles through a list of preset values.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.ValueButtonWidget.values" href="#nzshm_rupture_widget.ValueButtonWidget.values">values</a></code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a list of values to cycle through</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.ValueButtonWidget.value" href="#nzshm_rupture_widget.ValueButtonWidget.value">value</a></code></td>
+            <td>
+                  <code>any</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the current value</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.ValueButtonWidget.icon" href="#nzshm_rupture_widget.ValueButtonWidget.icon">icon</a></code></td>
+            <td>
+                  <code>string</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a CSS class. Classes already assigned to the HTML element are <code>fa</code> and <code>controlButton3DMap</code></p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.ValueButtonWidget.title" href="#nzshm_rupture_widget.ValueButtonWidget.title">title</a></code></td>
+            <td>
+                  <code>string</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>tooltip text</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+              <details class="quote">
+                <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ValueButtonWidget</span><span class="p">(</span><span class="n">anywidget</span><span class="o">.</span><span class="n">AnyWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A button widget that cycles through a list of preset values.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        values (list):</span>
+<span class="sd">            a list of values to cycle through</span>
+<span class="sd">        value (any):</span>
+<span class="sd">            the current value</span>
+<span class="sd">        icon (string):</span>
+<span class="sd">            a CSS class. Classes already assigned to the HTML element are `fa` and `controlButton3DMap`</span>
+<span class="sd">        title (string):</span>
+<span class="sd">            tooltip text</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_esm</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;ValueButtonWidget.js&quot;</span>
+    <span class="n">_css</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static&quot;</span> <span class="o">/</span> <span class="s2">&quot;widget.css&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">List</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Any</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">icon</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;fa-exclamation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.ValueButtonWidget.icon" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">icon</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s1">&#39;fa-exclamation&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.ValueButtonWidget.title" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">title</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Unicode</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.ValueButtonWidget.value" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">value</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">Any</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="nzshm_rupture_widget.ValueButtonWidget.values" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">values</span> <span class="o">=</span> <span class="n">traitlets</span><span class="o">.</span><span class="n">List</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">tag</span><span class="p">(</span><span class="n">sync</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-class-attribute"><code>class-attribute</code></small>
+      <small class="doc doc-label doc-label-instance-attribute"><code>instance-attribute</code></small>
+  </span>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+    </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nzshm_rupture_widget.decorate" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">decorate</span><span class="p">(</span><span class="n">cesium</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">,</span> <span class="n">home</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fullscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparency</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slider</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a MapLayoutBuilder with default widgets.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>cesium</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget" href="#nzshm_rupture_widget.CesiumWidget">CesiumWidget</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the CesiumWidget</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>home</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether to add a home button. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>fullscreen</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether to add a full screen button. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>transparency</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether to add a transparency button. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>slider</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>whether to add a slider. Defaults to True.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>MapLayoutBuilder</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a <code>MapLayoutBuilder</code> with the default widgets.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">cesium</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">,</span> <span class="n">home</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fullscreen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transparency</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slider</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a MapLayoutBuilder with default widgets.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        cesium (CesiumWidget):</span>
+<span class="sd">            the CesiumWidget</span>
+<span class="sd">        home (bool, optional):</span>
+<span class="sd">            whether to add a home button. Defaults to True.</span>
+<span class="sd">        fullscreen (bool, optional):</span>
+<span class="sd">            whether to add a full screen button. Defaults to True.</span>
+<span class="sd">        transparency (bool, optional):</span>
+<span class="sd">            whether to add a transparency button. Defaults to True.</span>
+<span class="sd">        slider (bool, optional):</span>
+<span class="sd">            whether to add a slider. Defaults to True.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        MapLayoutBuilder:</span>
+<span class="sd">            a `MapLayoutBuilder` with the default widgets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">MapLayoutBuilder</span><span class="p">(</span><span class="n">cesium</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">home</span><span class="p">:</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">HomeWidget</span><span class="p">(</span><span class="n">cesium</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">fullscreen</span><span class="p">:</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">FullScreenWidget</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">transparency</span><span class="p">:</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">top_left</span><span class="p">(</span><span class="n">transparency_button</span><span class="p">(</span><span class="n">cesium</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">slider</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">cesium</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">bottom_right</span><span class="p">(</span><span class="n">selection_slider</span><span class="p">(</span><span class="n">cesium</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">layout</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nzshm_rupture_widget.geojson_3d_map" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">geojson_3d_map</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a map with default controls. No further widgets may be added.</p>
+<p>The <code>CesiumWidget</code> can be obtained with</p>
+<pre><code>    map = geojson_3d_map(geojson_data)
+    cesium = map.children[0]
+</code></pre>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>data</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a list of GeoJSON objects</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>GridBox</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a widget containing the map and control widgets.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">geojson_3d_map</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a map with default controls. No further widgets may be added.</span>
+
+<span class="sd">    The `CesiumWidget` can be obtained with</span>
+<span class="sd">    ```</span>
+<span class="sd">        map = geojson_3d_map(geojson_data)</span>
+<span class="sd">        cesium = map.children[0]</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (list): a list of GeoJSON objects</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        GridBox: a widget containing the map and control widgets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cesium</span> <span class="o">=</span> <span class="n">CesiumWidget</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">layout_builder</span> <span class="o">=</span> <span class="n">decorate</span><span class="p">(</span><span class="n">cesium</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">layout_builder</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nzshm_rupture_widget.legend" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a legend widget.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>title</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The title of the legend</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>values</code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A mapping from <code>key</code> to CSS color <code>value</code></p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>HTML</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A static widget displaying the legend.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">legend</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a legend widget.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        title (str):</span>
+<span class="sd">            The title of the legend</span>
+<span class="sd">        values (dict):</span>
+<span class="sd">            A mapping from `key` to CSS color `value`</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        HTML:</span>
+<span class="sd">            A static widget displaying the legend.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">HTML</span><span class="p">()</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/b&gt;&lt;br/&gt;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">value</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;&lt;div&gt;&lt;i style=&quot;background-color: </span><span class="si">{</span><span class="n">val</span><span class="si">}</span><span class="s1">;&quot;&gt;&lt;/i&gt; </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&lt;/div&gt;&#39;</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">html</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="s2">&quot;mapLegend&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">html</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nzshm_rupture_widget.selection_slider" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">selection_slider</span><span class="p">(</span><span class="n">map_widget</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>A slider that can be used to switch between different GeoJSON objects of <code>map_widget</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>map_widget</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget" href="#nzshm_rupture_widget.CesiumWidget">CesiumWidget</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a map with more than one GeoJSON object</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>SliderWidget</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A slider widget that is linked to the <code>map_widget</code></p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">selection_slider</span><span class="p">(</span><span class="n">map_widget</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A slider that can be used to switch between different GeoJSON objects of `map_widget`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        map_widget (CesiumWidget):</span>
+<span class="sd">            a map with more than one GeoJSON object</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        SliderWidget:</span>
+<span class="sd">            A slider widget that is linked to the `map_widget`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">slider_widget</span> <span class="o">=</span> <span class="n">SliderWidget</span><span class="p">(</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">map_widget</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Select GeoJSON Layer&quot;</span>
+    <span class="p">)</span>
+    <span class="n">jslink</span><span class="p">((</span><span class="n">map_widget</span><span class="p">,</span> <span class="s2">&quot;selection&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">slider_widget</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">slider_widget</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="nzshm_rupture_widget.transparency_button" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">transparency_button</span><span class="p">(</span><span class="n">map_widget</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates a button widget that switches the <code>globe-opacity</code> of a <code>CesiumWidget</code> between
+the specified <code>values</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>map_widget</code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="nzshm_rupture_widget.CesiumWidget" href="#nzshm_rupture_widget.CesiumWidget">CesiumWidget</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the map</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>values</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>a list of possible opacity values between 0 and 1</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>ValueButtonWidget</code></td>            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>the button widget</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+            <details class="quote">
+              <summary>Source code in <code>src\nzshm_rupture_widget\__init__.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">transparency_button</span><span class="p">(</span><span class="n">map_widget</span><span class="p">:</span> <span class="n">CesiumWidget</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a button widget that switches the `globe-opacity` of a `CesiumWidget` between</span>
+<span class="sd">    the specified `values`.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        map_widget (CesiumWidget):</span>
+<span class="sd">            the map</span>
+<span class="sd">        values (list):</span>
+<span class="sd">            a list of possible opacity values between 0 and 1</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ValueButtonWidget:</span>
+<span class="sd">            the button widget</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">widget</span> <span class="o">=</span> <span class="n">ValueButtonWidget</span><span class="p">(</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">values</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">icon</span><span class="o">=</span><span class="s2">&quot;fa-eye&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Change Globe Opacity&quot;</span>
+    <span class="p">)</span>
+    <span class="n">jslink</span><span class="p">((</span><span class="n">map_widget</span><span class="p">,</span> <span class="s2">&quot;globe_opacity&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">widget</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">widget</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

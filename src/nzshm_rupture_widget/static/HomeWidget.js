@@ -1,0 +1,1 @@
+function a({model:e,el:n}){let t=document.createElement("div");t.classList.add("fa"),t.classList.add("fa-home"),t.classList.add("controlButton3DMap"),t.title="Navigate Home",t.addEventListener("click",function(d){e.send({msg:"home"})}),n.appendChild(t)}var s={render:a};export{s as default};

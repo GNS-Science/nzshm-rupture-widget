@@ -1,0 +1,18 @@
+site_name: NZSHM Rupture Widget Docs
+
+plugins:
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_if_no_docstring: true
+            signature_crossrefs: true
+            annotations_path: source
+
+theme:
+  name: "material"

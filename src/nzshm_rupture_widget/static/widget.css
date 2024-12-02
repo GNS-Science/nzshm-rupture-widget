@@ -1,7 +1,103 @@
-@import url("https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css");
+@import url("https://cesium.com/downloads/cesiumjs/releases/1.121/Build/Cesium/Widgets/widgets.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/* see https://fontawesome.com/v4/icons/ */
 
- .cesium-credit-logoContainer{
-    display:none !important;
+/* We don't want to display the Cesium Ion logo as we're not using Ion.*/
+.cesium-credit-logoContainer {
+  display: none !important;
+}
+
+.bottomRight3DMap {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bottomRight3DMap * {
+  pointer-events: all;
+}
+
+.controlButton3DMap {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 4px 4px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  height: 15px;
+  width: 15px;
+  margin: 6px;
+}
+
+.controlButton3DMap:hover {
+  background-color: #e4e4e4;
+}
+
+.mapLegend {
+  pointer-events: none !important;
+  background-color: white;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 4.5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.mapLegend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+}
+
+.mapHtmlWidget {
+  background: white;
+  padding: 4px;
+  border-radius: 4.5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.mapRightBar {
+  display: flex;
+  flex-flow: column;
+  align-items:flex-end;
+  width: 100%;
+  grid-area: 1 / 3 / 4 / 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mapRightBar * {
+  pointer-events: all;
+}
+
+.mapTopRight {
+  justify-content: flex-start;
+}
+
+.mapBottomRight {
+  justify-content: flex-end;
+}
+
+.mapLeftBar {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  width: 100%;
+  grid-area: 1 / 1 / 4 / 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.mapLeftBar * {
+  pointer-events: all;
+}
+
+.mapTopLeft {
+  justify-content: flex-start;
+}
+
+.mapBottomLeft {
+  justify-content: flex-end;
 }
 
 .sampleCanvas {
@@ -13,93 +109,103 @@
   border: 5px solid white;
 }
 
-
-.rangeWidget {
-    position: absolute;
-    display: flex;
-    bottom: 5px;
-    right: 40px;
-    width: 200px;
-    height: 29px;
-    background: white;
+.sliderWidget {
+  display: inline-flex;
+  width: calc(100% - 12px);
+  height: 29px;
+  background: white;
+  border: 2px solid rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-right: 6px;
+  margin-right: 6px;
 }
 
 .sliderControlButton {
-    background-color: white; /* Blue background */
-    border: none; /* Remove borders */
-    color: black; /* White text */
-    padding: 4px 4px; /* Some padding */
-    font-size: 15px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-    text-align: center;
-    height: 15px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  
-  /* Darker background on mouse-over */
-  .sliderControlButton:hover {
-    background-color: RoyalBlue;
-  }
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 4px 4px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  height: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sliderControlButton:hover {
+  background-color: #e4e4e4;
+}
+
+.rangeSlider {
+  margin-left: 4px;
+  margin-right: 4px;
+}
 
 /*  range CSS from https://range-input-css.netlify.app/ */
 
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  /* Removes default focus */
-  input[type="range"]:focus {
-    outline: none;
-  }
-  
-  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
-  /* slider track */
-  input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #add8e6;
-    border-radius: 0.5rem;
-    height: 0.5px;
-  }
-  
-  /* slider thumb */
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    margin-top: -7.75px; /* Centers thumb on the track */
-    background-color: #808080;
-    border-radius: 0.25rem;
-    height: 1rem;
-    width: 10px;
-  }
-  
-  input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid #808080;
-    outline-offset: 0.125rem;
-  }
-  
-  /*********** Firefox styles ***********/
-  /* slider track */
-  input[type="range"]::-moz-range-track {
-    background-color: #add8e6;
-    border-radius: 0.5rem;
-    height: 0.5px;
-  }
-  
-  /* slider thumb */
-  input[type="range"]::-moz-range-thumb {
-    background-color: #808080;
-    border: none; /*Removes extra border that FF applies*/
-    border-radius: 0.25rem;
-    height: 1rem;
-    width: 10px;
-  }
-  
-  input[type="range"]:focus::-moz-range-thumb{
-    outline: 3px solid #808080;
-    outline-offset: 0.125rem;
-  }
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #add8e6;
+  border-radius: 0rem;
+  height: 5px;
+  border: 1px;
+  border-color: black;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  margin-top: -7.5px;
+  /* Centers thumb on the track */
+  background-color: #808080;
+  border-radius: 2px;
+  height: 20px;
+  width: 8px;
+}
+
+/* input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 1px solid #808080;
+  outline-offset: 0px;
+} */
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #add8e6;
+  border-radius: 0rem;
+  height: 5px;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: #808080;
+  border: none;
+  /*Removes extra border that FF applies*/
+  border-radius: 2px;
+  height: 20px;
+  width: 8px;
+}
+
+/* input[type="range"]:focus::-moz-range-thumb{
+  outline: 3px solid #808080;
+  outline-offset: 0.125rem;
+} */
