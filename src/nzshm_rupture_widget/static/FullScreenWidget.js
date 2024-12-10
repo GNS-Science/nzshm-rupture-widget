@@ -1,1 +1,23 @@
-function l({model:c,el:n}){let e=document.createElement("i");e.classList.add("fa"),e.classList.add("fa-arrows"),e.classList.add("controlButton3DMap"),e.title="Fullscreen",e.addEventListener("click",function(s){if(document.fullscreenElement)document.exitFullscreen&&document.exitFullscreen();else{let t=e.closest(".fullScreenTarget");t&&t.requestFullscreen()}}),n.appendChild(e)}var d={render:l};export{d as default};
+// src/nzshm_rupture_widget/esm/FullScreenWidget.js
+function render({ model, el }) {
+  const button = document.createElement("i");
+  button.classList.add("fa");
+  button.classList.add("fa-arrows");
+  button.classList.add("controlButton3DMap");
+  button.title = "Fullscreen";
+  button.addEventListener("click", function(event) {
+    if (!document.fullscreenElement) {
+      const target = button.closest(".fullScreenTarget");
+      if (target) {
+        target.requestFullscreen();
+      }
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  });
+  el.appendChild(button);
+}
+var FullScreenWidget_default = { render };
+export {
+  FullScreenWidget_default as default
+};

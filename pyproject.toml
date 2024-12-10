@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nzshm_rupture_widget"
-version = "0.0.0.1"
+version = "0.0.0"
 description = "Ipywidgets map widget that can display 3D GeoJSON."
 authors = [{name="Oakley Jurgens", email="oakley.jurgens@gmail.com"}]
 license = {text = "GPL3"}
@@ -24,11 +24,6 @@ features = ["dev"]
 
 
 [tool.hatch.build]
-# ignore-vcs = true
-#include = [
-#    "src/nzshm_rupture_widget/static/*.*",
-#    "src/nzshm_rupture_widget/*.py",
-#]
 exclude = [
     "src/nzshm_rupture_widget/esm",
     "site",

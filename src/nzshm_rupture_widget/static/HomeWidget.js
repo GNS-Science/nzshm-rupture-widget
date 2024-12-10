@@ -1,1 +1,16 @@
-function a({model:e,el:n}){let t=document.createElement("div");t.classList.add("fa"),t.classList.add("fa-home"),t.classList.add("controlButton3DMap"),t.title="Navigate Home",t.addEventListener("click",function(d){e.send({msg:"home"})}),n.appendChild(t)}var s={render:a};export{s as default};
+// src/nzshm_rupture_widget/esm/HomeWidget.js
+function render({ model, el }) {
+  const button = document.createElement("div");
+  button.classList.add("fa");
+  button.classList.add("fa-home");
+  button.classList.add("controlButton3DMap");
+  button.title = "Navigate Home";
+  button.addEventListener("click", function(event) {
+    model.send({ msg: "home" });
+  });
+  el.appendChild(button);
+}
+var HomeWidget_default = { render };
+export {
+  HomeWidget_default as default
+};
