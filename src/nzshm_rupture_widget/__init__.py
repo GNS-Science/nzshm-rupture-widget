@@ -289,10 +289,13 @@ class MapLayoutBuilder:
         """
         self.cesium = cesium
         self.grid_box = None
+        
+        # overflow:hidden keeps map from expanding infinitely
         if not cesium.layout:
-            cesium.layout = Layout(grid_area="1 / 1 / -1 / -1")
+            cesium.layout = Layout(grid_area="1 / 1 / -1 / -1", overflow="hidden")
         else:
             cesium.layout.grid_area = "1 / 1 / -1 / -1"
+            cesium.layout.overflow = "hidden"
 
         self.widgets = {
             "top-left": [],

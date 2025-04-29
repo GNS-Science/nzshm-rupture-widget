@@ -22,8 +22,7 @@ function render({ model, el }) {
     const div = document.createElement("div");
     div.id = "cesiumContainer";
     div.style.width = "100%";
-    div.style.height = "400px";
-
+    div.style.height = "100%";
 
     const viewer = new Cesium.Viewer(div, {
         animation: false,
